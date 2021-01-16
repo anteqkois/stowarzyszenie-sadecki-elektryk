@@ -21,11 +21,6 @@ import './components/association/association.scss';
 
 //import image
 import './img/logo.png';
-import './img/test1.jpg';
-import './img/test2.jpg';
-import './img/test3.jpg';
-import './img/test4.jpg';
-import './img/test5.jpg';
 import './img/pit-op.jpg';
 
 //import svg
@@ -33,7 +28,11 @@ import './img/iconmonstr-tablet-5.svg';
 import './img/iconmonstr-email-2.svg';
 import './img/iconmonstr-facebook-6.svg';
 import './img/iconmonstr-facebook-messenger-1.svg';
-import './img/iconmonstr-process-2.svg';
+import './img/iconmonstr-mechanics.svg';
+import './img/iconmonstr-culture.svg';
+import './img/iconmonstr-learn.svg';
+import './img/iconmonstr-nature.svg';
+import './img/iconmonstr-programming.svg';
 
 //import functions and vars
 import {addPositionProject} from './components/project/project.js';

@@ -6,7 +6,7 @@ exports.findOne = async (req, res) => {
         const post = await Post.findOne({
             slug: req.params.slug
         });
-        return res.status(200).send({data: post});
+        return res.status(200).send({post});
     } catch (error){
         console.log(error);
     }
@@ -19,7 +19,7 @@ exports.findAll = async (req, res) => {
         const posts = await Post.find({
 
         }).limit(limit).sort({date: 'desc'});
-        return res.status(200).send({data: posts,});
+        return res.status(200).send(posts);
     } catch (error){
         console.log(error);
     }
@@ -34,7 +34,7 @@ exports.create = async (req, res) => {
         });
         await post.save();
 
-        return res.status(201).send({data: post, message: 'Post has just been created'});
+        return res.status(201).send({post, message: 'Post has just been created'});
     } catch (error){
         console.log(error);
     }
