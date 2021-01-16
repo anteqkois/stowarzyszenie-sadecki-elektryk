@@ -1,0 +1,181 @@
+@import '../../setting/varAndMixin.scss';
+
+.association {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin: 60px 0px 0px 0px;
+
+    &__wrapper {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 160px 65% 50px;
+        padding: 10px;
+    }
+
+    &__logo {
+        grid-column: 1/3;
+        grid-row: 1/2;
+        width: 130px;
+        height: auto;
+        margin: 0px 0px 10px 0px;
+    }
+
+    &__title {
+        grid-column: 1/3;
+        grid-row: 1/2;
+        width: 220px;
+        word-wrap: break-word;
+        font-size: $text-size-h1;
+        line-height: 2.2rem;
+        font-weight: 900;
+        letter-spacing: 1px;
+        display: flex;
+        align-self: flex-end;
+        transform: translateX(59%);
+        padding: 0px 0px 10px 0px;
+        text-shadow: 3px 4px 4px grey;
+    }
+
+    &__description {
+        grid-column: 1/5;
+        grid-row: 2/4;
+        padding: 0px 10px 0px 10px;
+        line-height: 1.1rem;
+    }
+
+    &__ilustration-wrapper {
+        display: none;
+    }
+
+    &__button {
+        @include flexCenter;
+        grid-column: 1/5;
+        grid-row: 3/4;
+        transform: translate(0px, 20px);
+    }
+
+}
+
+// small devices (smartphons on landscape oreintation, 768px and up)
+@media (max-width: 768px) and (orientation: landscape) {
+    .association {
+        &__wrapper {
+            grid-template-rows: 1fr 1fr 0.6fr;
+        }
+
+        &__button {
+            grid-row: 3/4;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .association {
+        &__wrapper {
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        &__logo {
+            grid-column: 1/2;
+            width: 200px;
+
+        }
+
+        &__title {
+            width: 450px;
+            padding: 0px 0px 5% 0px;
+            font-size: 3rem;
+            line-height: 3rem;
+            transform: translateX(50%);
+        }
+
+        &__description {
+            grid-row: 2/3;
+            line-height: 1.1rem;
+            max-width: 85%;
+        }
+
+        &__ilustration-wrapper {
+            grid-column: 3/4;
+            grid-row: 1/2;
+            display: inline-block;
+            visibility: hidden;
+        }
+
+        &__button {
+            grid-column: 1/3;
+            grid-row: 2/3;
+            transform: translate(30px, 100px);
+        }
+
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .association {
+        &__logo {
+            grid-column: 1/2;
+            width: 230px;
+        }
+
+        &__description {
+            grid-column: 1/3;
+            max-width: none;
+        }
+
+        &__button {
+            transform: translate(40px, 80px);
+        }
+
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .association {
+        &__ilustration-wrapper {
+            grid-column: 3/5;
+            grid-row: 1/3;
+            visibility: visible;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            transform: translate(-90px, 0px);
+        }
+
+        &__ilustration {
+            width: 330px;
+        }
+        &__button {
+            transform: translate(-100px, 60px);
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .association {
+        margin: 60px 0px 0px 50px;
+        &__ilustration {
+            width: 500px;
+            transform: translate(100px, 50px);
+        }
+
+        &__button {
+            transform: translate(-100px, 30px);
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .association {
+        &__ilustration {
+            width: 600px;
+            transform: translate(70px, 50px);
+        }
+    }
+}

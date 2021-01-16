@@ -1,0 +1,675 @@
+@import '../../setting/varAndMixin.scss';
+
+.aid-wrapper {
+    @include backgroundIce;
+    margin: 200px 0px 100px 0px;
+    padding: 10px 30px 30px 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+
+    &__title {
+        position: absolute;
+        left: 50%;
+        top: -20px;
+        transform: translateX(-50%);
+        font-size: $text-size-normal;
+        text-transform: uppercase;
+        padding: 10px 70px;
+        white-space: nowrap;
+        font-weight: 500;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: $color-white;
+            z-index: -10;
+            box-shadow: 4px 10px 20px -6px black,
+                3px 0px 15px -10px black;
+        }
+    }
+
+}
+
+
+.aid-illustartion {
+    width: 300px;
+
+    &__wrapper {
+        //border: 1px red solid;
+        @include flexCenter;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        position: relative;
+    }
+
+    &__attribution {
+        color: $color-grey;
+        font-size: $text-size-attribution;
+        position: absolute;
+        left: 50%;
+        bottom: 6%;
+        transform: translateX(-50%);
+
+        &__link {
+            color: $color-grey;
+        }
+    }
+
+}
+
+.aid-description {
+    &__wrapper {
+        //border: 1px red solid;
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin: 20px 0px;
+    }
+
+    &__text {
+        margin: 20px 0px;
+
+        &:nth-child(2) {
+            margin: 50px 0px;
+        }
+
+        &:nth-child(3) {
+            margin: 50px 0px;
+        }
+
+        & strong {
+            font-weight: 500;
+        }
+    }
+
+}
+
+.aid-instruction {
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        //border: 1px red solid;
+        grid-column: 1/2;
+        grid-row: 3/4;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 105%;
+            max-width: 720px;
+            height: 102%;
+            background-color: $color-white;
+            border-radius: 5px;
+            box-shadow: 6px 15px 30px -6px black;
+            z-index: -10;
+        }
+    }
+
+    &__text {
+        //border: 1px blue solid;
+        max-width: 600px;
+
+    }
+
+    &__step-descriptions {}
+
+    &__step-descriptions-item {
+        @include flexCenter;
+        flex-wrap: wrap;
+        height: 130px;
+        list-style-type: none;
+        text-align: center;
+        opacity: 0.5;
+
+        &--active {
+            opacity: 1;
+            animation: showActiveStep 0.5s 0s 1 cubic-bezier(0, 1.74, 0.4, 0.74);
+        }
+
+        & a {
+            color: $color-black;
+        }
+    }
+
+    &__steps-view {
+        //border: 1px blue solid;
+    }
+
+    &__step-icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 600px;
+        padding: 0px 10px;
+        margin-bottom: 15px;
+    }
+
+    &__step-icons-item {
+        @include flexCenter;
+        list-style-type: none;
+        height: 40px;
+        width: 40px;
+        background-color: $color-grey;
+        color: $color-white;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            transform: translate(-80%, -50%);
+            transition: background-color 0.8s;
+            width: 20vw;
+            max-width: 140px;
+            height: 1px;
+            background-color: inherit;
+            z-index: -10;
+        }
+
+        &:nth-child(1)::before {
+            display: none;
+        }
+
+        &--passed {
+            background-color: $color-purple;
+
+        }
+
+        &--active {
+            background-color: $color-purple;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 115%;
+                height: 115%;
+                background-color: transparent;
+                backdrop-filter: blur(55px);
+                border-radius: inherit;
+                border: 3px solid $color-purple;
+                z-index: -5;
+                animation: showActiveIcon 0.5s 0s 1 cubic-bezier(0, 1.74, 0.4, 0.74);
+            }
+        }
+
+        &--pastActive {
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 115%;
+                height: 115%;
+                background-color: transparent;
+                backdrop-filter: blur(55px);
+                border-radius: inherit;
+                border: 3px solid $color-purple;
+                z-index: -5;
+                animation: hideActiveIcon 1s 0s 1 linear;
+            }
+        }
+    }
+
+    &__button {
+        @include flexCenter;
+        transform: scale(0.7);
+        width: auto;
+
+        & button {
+            outline: transparent;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.aid-instruction-image {
+    width: 100%;
+    max-width: 650px;
+
+    &__wrapper {}
+
+}
+
+.aid-instruction-step {
+    position: absolute;
+    background-color: $color-purple;
+    opacity: 0;
+
+    &--0 {
+        left: 0;
+        top: 0;
+        height: 6.5%;
+        width: 100%;
+        transform: translateY(-5%);
+
+        &:nth-child(2) {
+            left: 0;
+            top: 38%;
+            height: 20%;
+            width: 100%;
+            transform: translateY(0%);
+        }
+
+        &:nth-child(3) {
+            left: 50%;
+            top: 20%;
+            height: 7%;
+            width: 22%;
+            transform: translateY(0%) translateX(-47%);
+        }
+    }
+
+    &--1 {
+        left: 0;
+        top: 58%;
+        height: 14%;
+        width: 100%;
+    }
+
+    &--2 {
+        left: 0;
+        top: 72%;
+        height: 12%;
+        width: 100%;
+    }
+
+    &--3 {
+        left: 0;
+        top: 87.5%;
+        height: 12%;
+        width: 100%;
+    }
+
+    &--active {
+        opacity: 0.5;
+        animation: showActiveStep 0.5s 0s 1 cubic-bezier(0.39, 1.41, 0.49, 0.93);
+        //cubic-bezier(0, 1.74, 0.4, 0.74);
+
+        &:nth-of-type(2) {
+            animation: showActiveStepCenter 0.5s 0s 1 cubic-bezier(0.39, 1.41, 0.49, 0.93);
+        }
+    }
+
+
+    &__wrapper {
+        position: relative;
+    }
+}
+
+
+// small devices (smartphons on landscape oreintation, 768px and up)
+@media (max-width: 768px) and (orientation: landscape) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .aid-instruction {
+        &__wrapper {}
+
+        &__text {}
+
+        &__step-descriptions {}
+
+        &__step-descriptions-item {
+            min-width: 340px;
+        }
+
+        &__steps-view {}
+
+        &__step-icons {}
+
+        &__step-icons-item {
+            font-size: 1.4rem;
+        }
+    }
+
+    .aid-description {
+        &__wrapper {}
+    }
+
+    .aid-instruction-image {
+        &__wrapper {}
+
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .aid-wrapper {
+        grid-template-columns: 60% 40%;
+        margin: 200px 0px 10vw 0px;
+        max-height: 1250px;
+
+        &__title {
+            display: none;
+        }
+    }
+
+    .aid-illustartion {
+        width: 400px;
+
+        &__wrapper {
+            grid-column: 2/3;
+
+        }
+
+        &__attribution {
+            bottom: 17%;
+        }
+    }
+
+    .aid-description {
+        &__wrapper {
+            grid-row: 1/2;
+        }
+
+        &__title {
+            font-size: 3rem;
+            white-space: nowrap;
+        }
+
+        &__text {
+
+            &:nth-child(2) {
+                transform: translateX(40px);
+                max-width: 550px;
+            }
+
+            &:nth-child(3) {
+                transform: translateX(80px);
+                max-width: 550px;
+                margin-bottom: 100px;
+            }
+        }
+
+    }
+
+    .aid-instruction {
+        &__wrapper {
+            grid-column: 1/3;
+            grid-row: 2/3;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &__step-descriptions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 100%;
+            padding: 30px 0px;
+            //margin: 20px 25px;
+
+        }
+
+        &__step-descriptions-item {
+            @include flexCenter;
+            max-width: 340px;
+            height: calc(100% / 5);
+
+            &--active {
+                transform: scale(1.15);
+                animation: none;
+
+            }
+        }
+
+        &__text {
+            width: 40%;
+            color: $color-white;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -3%;
+                top: 50%;
+                transform: translate(0%, -50%);
+                width: 130%;
+                max-width: none;
+                height: 110%;
+                background: rgb(99, 50, 139);
+                background: linear-gradient(220deg, $color-purple 50%, rgba(236, 78, 50, 1) 150%);
+                border-radius: 5px;
+                box-shadow: 0 25px 35px rgba(10px, 10px, 0px, 0.6);
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+                z-index: -10;
+            }
+        }
+
+        &__steps-view {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                right: -3%;
+                top: 50%;
+                transform: translate(0%, -50%);
+                width: 97%;
+                max-width: none;
+                height: 102%;
+                background-color: $color-white;
+                border-radius: 5px;
+                box-shadow: 6px 15px 30px -6px black;
+                z-index: -10;
+            }
+
+        }
+
+        &__step-icons {
+            flex-direction: column;
+            justify-content: space-around;
+            width: 80px;
+            margin: 30px 0px;
+        }
+
+        &__step-icons-item {
+            margin-bottom: 0px;
+            box-shadow: 6px 11px 20px -4px black,
+                -3px 0px 15px -6px black;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                left: 50%;
+                bottom: 50%;
+                transform: translate(-50%, -50px) rotate(90deg);
+                max-width: 120px;
+
+            }
+        }
+
+        &__button {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-40%) scale(0.9);
+
+        }
+    }
+
+    .aid-instruction-image {
+        //max-width: none;
+
+        &__wrapper {
+            padding: 30px 0px 70px 0px;
+        }
+
+    }
+
+    .aid-wrapper {
+        padding: 10px 40px 40px 40px;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .aid-wrapper {
+        padding: 10px 50px 150px 50px;
+        margin: 300px 30px 70px 30px;
+    }
+
+    .aid-illustartion {
+        &__attribution {
+            font-size: 0.6rem;
+            left: 51%;
+            bottom: 16%;
+        }
+    }
+
+    .aid-instruction {
+        &__wrapper {
+            grid-column: 1/3;
+            grid-row: 2/3;
+            min-height: 700px;
+        }
+
+        &__step-icons {
+            //align-items: flex-start;
+            width: auto;
+            transform: translateX(-50%);
+        }
+
+        &__steps-view {
+
+            &::before {
+                left: 0;
+                transform: translate(0%, -50%);
+                width: 102%;
+                max-width: none;
+            }
+
+        }
+
+        &__button {
+            bottom: 10px;
+            transform: translateX(-40%) scale(1);
+
+        }
+    }
+
+    .aid-instruction-image {
+
+        &__wrapper {
+            padding: 30px 0px 50px 0px;
+            @include flexCenter;
+            width: 90%;
+        }
+
+    }
+
+}
+
+@media (min-width: 1600px) {
+    .aid-illustartion {
+        width: 550px;
+
+        &__attribution {
+            font-size: 0.6rem;
+            left: 51%;
+            bottom: 16%;
+        }
+    }
+
+    .aid-instruction-image {
+        //max-width: none;
+
+        &__wrapper {
+            padding: 30px 0px 70px 0px;
+        }
+
+    }
+
+    .aid-instruction {
+        &__button {
+            bottom: 15px;
+            transform: translateX(-30%) scale(1);
+
+        }
+    }
+
+    .aid-description {
+        &__wrapper {
+            margin: 30px 0px 0px 30px;
+        }
+    }
+}
+
+
+
+@keyframes showActiveIcon {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes hideActiveIcon {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+@keyframes showActiveStep {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes showActiveStepCenter {
+    from {
+        transform: translateY(0%) translateX(-47%) scale(0);
+    }
+
+    to {
+        transform: translateY(0%) translateX(-47%) scale(1);
+    }
+}

@@ -1,0 +1,86 @@
+@import '../../setting/varAndMixin.scss';
+
+.hamburger {
+    $hamburger: &;
+    z-index: 10;
+
+    @include flexCenter;
+    width: 70px;
+    height: 50px;
+    padding: 10px;
+    margin: auto 10px auto 10px;
+    background-color: transparent;
+    border: transparent;
+    outline: transparent;
+    cursor: pointer;
+
+    &__icon {
+        background-color: $color-black;
+        position: relative;
+        width: 50px;
+        height: 4px;
+        border-radius: 15px;
+        transform: scale(1);
+        transition: transform 0.25s ease-in-out 0.25s;
+
+        &::before,
+        &::after {
+            background-color: $color-black;
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            border-radius: 15px;
+            transition: transform 0.25s ease-in-out 0s;
+        }
+
+        &::before {
+            transform: translateY(10px) scale(1) rotate(0deg);
+        }
+
+        &::after {
+            transform: translateY(-10px) scale(1) rotate(0deg);
+        }
+    }
+
+    &--active {
+        #{ $hamburger }__icon {
+            transform: scale(0.1);
+            transition: transform 0.25s ease-in-out;
+
+            &::before,
+            &::after {
+                transition: transform 0.25s ease-in-out 0.25s;
+            }
+
+            &::before {
+                transform: translateY(0px) scale(10) rotate(45deg);
+            }
+
+            &::after {
+                transform: translateY(0px) scale(10) rotate(-45deg);
+            }
+        }
+    }
+}
+
+// small devices (smartphons on landscape oreintation, 768px and up)
+@media (max-width: 768px) and (orientation: landscape) {
+    .association {
+        &__wrapper {
+            grid-template-rows: 1fr 1fr 0.6fr;
+        }
+
+        &__button {
+            align-items: flex-start;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+}

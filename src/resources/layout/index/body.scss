@@ -1,0 +1,152 @@
+@import '../../setting/varAndMixin.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //font-family: 'Teko',
+    //    sans-serif;
+    font-family: 'Ubuntu',
+        sans-serif;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    background-color: $color-white;
+    overflow-x: hidden;
+    //position: relative;
+
+    &::-webkit-scrollbar {
+        width: 16px;
+        display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(163, 163, 160, 0.356);
+        backdrop-filter: blur(8px);
+        box-shadow: $color-grey 1px 1px 10px;
+        border-radius: 6px;
+    }
+
+    .nav {
+        width: 100vw;
+        height: auto;
+        position: fixed;
+        //top: 0;
+        z-index: 10;
+
+        &__cointainer {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__background {
+            @include backgroundIce;
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            box-shadow: $color-grey 0px 0px 10px;
+            transition: box-shadow 2.75s ease-in-out 0s;
+
+            &--active {
+                box-shadow: $color-grey 0px 0px 0px;
+                transition: box-shadow 0.75s ease-in-out 0s;
+            }
+
+        }
+    }
+}
+
+.background {
+    width: 400%;
+    height: 100%;
+    transform: translateX(-46%);
+
+    &__wrapper {
+        width: 100vw;
+        height: 69%;
+        position: absolute;
+        top: 30px;
+        z-index: -20;
+        //text-align: center;
+        overflow: hidden;
+    }
+
+    //display: none;
+}
+
+.main {
+    //position: absolute;
+    //top: 60px;
+    width: 100vw;
+    height: auto;
+    position: relative;
+    //overflow-x: hidden;
+}
+
+// small devices (smartphons on landscape oreintation, 768px and up)
+@media (max-width: 768px) and (orientation: landscape) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+    .nav {
+        &__cointainer {
+            padding: 0px 15px 0px 0px;
+        }
+    }
+
+    .background {
+        &__wrapper {
+            top: 50px;
+        }
+    }
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .background {
+        width: 250%;
+            &__wrapper {
+                height: 62.5%;
+                top: 200px;
+            }
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .background {
+        width: 100%;
+        transform: translateX(0%);
+        &__wrapper {
+            height: 55%;
+            top: 200px;
+        }
+    }
+
+    .main {
+        padding: 10px 0%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .background {
+        &__wrapper {
+            height: 58%;
+            top: 190px;
+        }
+    }
+}
