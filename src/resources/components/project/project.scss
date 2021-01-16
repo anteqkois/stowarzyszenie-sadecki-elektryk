@@ -154,11 +154,12 @@
 @media (min-width: 768px) {
     .project {
         width: 60%;
+        padding: 10px 20px;
 
         &__title {
-            width: calc(100% + 30px);
-            transform: translateX(-30px);
-            padding: 10px 10px 10px 30px;
+            width: calc(100% + 50px);
+            transform: translateX(-40px);
+            padding: 10px 10px 10px 40px;
 
             &::after {
                 bottom: -20px;
