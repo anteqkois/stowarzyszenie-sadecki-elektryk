@@ -1,5 +1,5 @@
 const database = require('../config/database');
-const Post = require('../models/post');
+const Post = require('../models/project');
 
 exports.findOne = async (req, res) => {
     try{

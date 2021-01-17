@@ -14,6 +14,7 @@ module.exports = {
     target: 'node',
     entry: {
         index: './src/resources/index.js',
+        'all-projects': './src/resources/all-projects.js'
     },
     output: {
         path: path.resolve(__dirname, './src/public'),
@@ -44,7 +45,16 @@ module.exports = {
                 name: '[name].[ext]',
             },         
         },
-        ]
+        {
+            test: /\.html$/i,
+            loader: 'file-loader',
+            options: {
+                outputPath: '/',
+                name: '[name].[ext]',
+            },         
+            exclude: path.resolve(__dirname, './src/views/index.html')
+        },
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -54,9 +64,10 @@ module.exports = {
             minify: false
         }),
         //new HtmlWebpackPlugin({
-        //    template: './src/projects.html',
-        //    filename: 'projects.html',
-        //    inject: false,
+        //    template: './src/views/all-projects.html',
+        //    filename: 'all-projects.html',
+        //    chunks: ['index', 'all-project'],
+        //    inject: true,
         //    minify: false
         //}),
         new  MiniCssExtractPlugin ({

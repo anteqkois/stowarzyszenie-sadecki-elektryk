@@ -1,7 +1,6 @@
 import './layout/index/body.scss'
 import './layout/index/illustrations.scss'
 import './layout/index/animationSvg.scss'
-import './layout/index/background.js'
 
 import './components/menu/menu.scss';
 import './components/menu/menu.js';
@@ -35,10 +34,25 @@ import './img/iconmonstr-nature.svg';
 import './img/iconmonstr-programming.svg';
 
 //import functions and vars
-import {addPositionProject} from './components/project/project.js';
+import {addPositionProject, createProjects, Project} from './components/project/project';
 
 
 //Others code to index.html
+const axios = require('axios');
+
+const getPosts =  async () =>{
+    try {
+        const { data } = await  axios.get('http://localhost:8081/projects?limit=4');
+        const allProject = createProjects(data);
+        document.querySelector('.projects-wrapper').appendChild(allProject);
+        addPositionProject();
+    } catch (error) {
+        console.log('Wystąpił błąd podczas pobrania projektów', error);
+    }
+
+};
+document.onload = getPosts()
+
 let currentYear = new Date().getFullYear();
 let copyright = `&copy; Copyright ${currentYear}, Antek Kois & Nikodem Kusiak. All rights reserved`;
 document.querySelector('.copyright').innerHTML = copyright;

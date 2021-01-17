@@ -40,7 +40,7 @@ body {
         width: 100vw;
         height: auto;
         position: fixed;
-        //top: 0;
+        top: 0;
         z-index: 10;
 
         &__cointainer {
@@ -145,7 +145,7 @@ body {
 @media (min-width: 1600px) {
     .background {
         &__wrapper {
-            height: 58%;
+            height: 60%;
             top: 190px;
         }
     }

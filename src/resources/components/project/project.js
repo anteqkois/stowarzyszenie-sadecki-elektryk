@@ -1,6 +1,4 @@
-const axios = require('axios');
-
-export const addPositionProject = () =>{
+const addPositionProject = () =>{
     
     const project = document.querySelectorAll('.project__wrapper');
     
@@ -81,7 +79,7 @@ class Project {
         span.innerHTML = 'Wszystkie projekty';
         span.classList.add('button__link');
         span.setAttribute('data-text', 'Wszystkie projekty');
-        span.setAttribute('href', 'http://localhost:8081/posts');
+        span.setAttribute('href', 'http://localhost:8081/all-projects');
 
         const butttonIcon = document.createElement('div');
         butttonIcon.classList.add('button__icon');
@@ -104,16 +102,4 @@ const createProjects = (data) => {
     return fragment;
 }
 
-const getAllPosts =  async () =>{
-    try {
-        const { data } = await  axios.get('http://localhost:8081/posts?limit=4');
-        const allProject = createProjects(data);
-        document.querySelector('.projects-wrapper').appendChild(allProject);
-        addPositionProject();
-    } catch (error) {
-        console.log('Wystąpił błąd podczas pobrania projektów', error);
-    }
-
-};
-
-document.onload = getAllPosts();
+export {addPositionProject, Project, createProjects};

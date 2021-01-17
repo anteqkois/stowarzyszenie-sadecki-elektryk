@@ -152,9 +152,21 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+    .projects-wrapper{
+        transform-style: preserve-3d;
+        perspective: 300px;
+    }
     .project {
         width: 60%;
         padding: 10px 20px;
+        transform: translateZ(0px);
+        transition: transform 0.5s ease-in-out;
+
+        &:hover{
+            transform: translateZ(5px);
+            transition: transform 0.5s ease-in-out;
+
+        }
 
         &__title {
             width: calc(100% + 50px);
