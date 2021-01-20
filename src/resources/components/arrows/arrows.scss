@@ -1,0 +1,58 @@
+@import '../../setting/varAndMixin.scss';
+
+.arrows{
+    width: 230px;
+    height: 40px;
+    transform-origin: left;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    opacity: 0.1;
+    animation: moveArrow 4s linear infinite;
+
+    &:nth-of-type(1){
+        animation: moveArrow 4s -0.2s linear infinite;
+    }
+    &:nth-of-type(2){
+        animation: moveArrow 4s -0.4s linear infinite;
+    }
+
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color:$color-grey;
+        border-radius: 5px 5px 5px 5px;
+
+    }
+    &::before{
+        transform-origin: left top;
+        transform: rotate(45deg) translateX(-27px);
+    }
+    &::after{
+        transform-origin: right top;
+        transform: rotate(-45deg) translateX(27px);
+    }
+    &__wrapper{
+        @include flexCenter;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 25vw;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+@keyframes moveArrow {
+    from{
+        transform: translateY(-120vh);
+    }
+
+    to{
+        transform:  translateY(120vh);
+    }
+}

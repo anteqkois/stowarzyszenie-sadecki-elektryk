@@ -1,6 +1,7 @@
 import '../views/all-projects.html';
 import './components/hamburgerMenu/hamburgerMenu';
 import './components/heroImage/heroImage.scss'
+import './components/arrows/arrows.scss'
 const axios = require('axios');
 
 import './img/test.jpg'

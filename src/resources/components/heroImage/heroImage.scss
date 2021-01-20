@@ -4,21 +4,33 @@
     width: 100%;
     &__wrapper{
         position: fixed;
-        top: 0;
+        top: 60px;
         left: 0;
         width: 100vw;
-        z-index: -20;
+        z-index: -40;
     }
 }
 .main{
     margin-top: 70vw ;
 }
 
+
 // small devices (smartphons on landscape oreintation, 768px and up)
 @media (max-width: 768px) and (orientation: landscape) {}
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .hero-image {
+
+        &__wrapper {
+            top: 0;
+        }
+    }
+    .main {
+        margin-top: 58vw;
+    }
+
+}
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {}
@@ -26,6 +38,6 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
     .main {
-        margin-top: 700px;
+        margin-top: 45vw;
     }
 }
