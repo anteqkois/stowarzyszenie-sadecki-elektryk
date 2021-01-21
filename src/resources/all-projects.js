@@ -30,4 +30,30 @@ const getAllPosts =  async () =>{
 
 };
 
-document.onload = getAllPosts()
+document.onload = getAllPosts();
+
+
+const main = document.querySelector('.main');
+
+const arrow = {
+    arrow: document.querySelector('.arrows__wrapper'),
+    isActive: true,
+    checkOffSet: function() {
+        //console.log(main.getBoundingClientRect().top)
+        main.getBoundingClientRect().top > 500 ? this.setActive() : this.unsetActive();
+    },
+    setActive: function(){
+        !this.isActive && this.toggleActive(); 
+    },
+    unsetActive: function(){
+        this.isActive && this.toggleActive(); 
+    },
+    toggleActive: function(){
+        this.isActive = !this.isActive;
+        this.arrow.classList.toggle('arrows__wrapper--active');
+    }
+}
+
+window.addEventListener('scroll', ()=>{
+    arrow.checkOffSet();
+})
