@@ -14,5 +14,3 @@ router.get('/projects/:slug', projectsController.findOne);
 router.get('/projects', projectsController.findAll);
 
 module.exports = router;
-
-// /posts?limit=5

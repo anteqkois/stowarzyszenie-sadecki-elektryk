@@ -43,7 +43,7 @@
         grid-column: 1/5;
         grid-row: 2/4;
         padding: 10px 20px 10px 20px;
-        line-height: 1.1rem;
+        line-height: 1.2rem;
     }
 
     &__ilustration-wrapper {
@@ -76,6 +76,7 @@
 @media (min-width: 768px) {
     .association {
         margin: 60px 0px 0px 50px;
+
         &__wrapper {
             grid-template-rows: repeat(2, 1fr);
         }
@@ -148,10 +149,11 @@
             align-items: flex-start;
             transform: translate(-90px, 0px);
         }
-
+        
         &__ilustration {
             width: 330px;
         }
+
         &__button {
             transform: translate(-100px, 60px);
         }
@@ -160,6 +162,12 @@
 
 @media (min-width: 1400px) {
     .association {
+        &__title {
+            width: 470px;
+            font-size: 3.5rem;
+            line-height: 3.7rem;
+            transform: translateX(55%);
+        }
         &__ilustration {
             width: 500px;
             transform: translate(100px, 50px);
