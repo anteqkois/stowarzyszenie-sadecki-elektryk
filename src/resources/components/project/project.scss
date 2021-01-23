@@ -8,7 +8,8 @@
     border-radius: 10px;
     //box-shadow: 7px 15px 20px -6px black,
     //    0px 0px 5px rgba(145, 144, 144, 0.493);
-    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.5),
+        0px 15px 35px rgba(0, 0, 0, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
@@ -135,7 +136,7 @@
         grid-column: 1/3;
         height: 60px;
         position: relative;
-         margin: 15px 0px;
+        margin: 15px 0px;
     }
 
     &__button {
@@ -152,17 +153,18 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-    .projects-wrapper{
+    .projects-wrapper {
         transform-style: preserve-3d;
         perspective: 300px;
     }
+
     .project {
         width: 60%;
         padding: 10px 20px;
         transform: translateZ(0px);
         transition: transform 0.5s ease-in-out;
 
-        &:hover{
+        &:hover {
             transform: translateZ(5px);
             transition: transform 0.5s ease-in-out;
 
@@ -207,9 +209,46 @@
         padding-bottom: 60px;
 
         &__title {
-            font-size: $text-size-h1;
-            left: 25%;
+            font-size: 3em;
+            text-transform: none;
+            padding: 0px;
+            //margin: 40px 40px;
+            font-weight: 700;
+            left: auto;
+            top: 30px;
+            right: 30px;
+            transform: translateX(0%);
+
+            &::after {
+                display: none;
+            }
         }
+
+        //    &__title {
+        //        position: absolute;
+        //        left: 50%;
+        //        top: -20px;
+        //        transform: translateX(-50%);
+        //        font-size: $text-size-normal;
+        //        text-transform: uppercase;
+        //        padding: 10px 20px;
+        //        white-space: nowrap;
+        //        font-weight: 500;
+        //
+        //        &::after {
+        //            content: "";
+        //            width: 100%;
+        //            height: 100%;
+        //            position: absolute;
+        //            left: 0;
+        //            top: 0;
+        //            background-color: $color-white;
+        //            z-index: -10;
+        //            box-shadow: 4px 10px 20px -6px black,
+        //                3px 0px 15px -10px black;
+        //        }
+        //    }
+
 
         &__illustartion {
             max-width: 370px;
@@ -243,9 +282,11 @@
 
     .projects-wrapper {
         margin: 160px 30px 20px 30px;
-                &__illustartion {
-                    transform: translateY(70px);
-                }
+
+        &__illustartion {
+            transform: translateY(70px);
+        }
+
     }
 
     .project {
@@ -268,6 +309,12 @@
 
         &__illustartion {
             max-width: 450px;
+        }
+
+        &__title {
+            font-size: 4em;
+            top: 80px;
+            right: 100px;
         }
     }
 
