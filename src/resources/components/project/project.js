@@ -1,3 +1,8 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger); 
+
 const addPositionProject = () =>{
     
     const project = document.querySelectorAll('.project__wrapper');
@@ -8,7 +13,6 @@ const addPositionProject = () =>{
     }
     
 }
-
 
 class Project {
     constructor(dataOfProject){
@@ -101,5 +105,16 @@ const createProjects = (data) => {
     })
     return fragment;
 }
+
+// GSAP
+
+const illustration = document.querySelector('.projects-wrapper__illustartion');
+
+gsap.fromTo(illustration, {y: '-=150', x: '-=400', opacity:0},{y: 0, x: 0, opacity:1, scrollTrigger: {
+        trigger: '.main',
+        start: 'top 60%',
+        end: 'top 20%',
+        scrub: 2,
+    }})
 
 export {addPositionProject, Project, createProjects};

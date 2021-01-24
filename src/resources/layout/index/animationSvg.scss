@@ -234,59 +234,48 @@
     90% {
         transform: rotate(-3deg);
     }
+    100%{
+        transform: rotate(2deg);
+    }
 }
 
 #Graduation_hat_1_ {
     transform-box: fill-box;
     transform-origin: bottom;
-    animation: hatMovie 3s infinite linear alternate;
+    animation: hatMovie 2.4s 0.1s infinite linear alternate;
 }
 
 @keyframes hatMovie {
     0% {
-        //opacity: 1;
-        transform: translate(-740px, -220px)rotate(-20deg);
+        transform: translate(-750px, -220px)rotate(-38deg);
     }
 
-    10% {
-        transform: translate(-740px, -205px)rotate(-30deg);
+    20% {
+        transform: translate(-750px, -220px)rotate(-43deg);
     }
 
     30% {
-
-        transform: translate(-740px, -220px)rotate(-20deg);
-    }
-
-    35% {
-
-        transform: translate(-740px, -220px)rotate(-30deg);
+        transform: translate(-750px, -220px)rotate(-40deg);
     }
 
     50% {
+        transform: translate(-750px, -220px)rotate(-38deg);
+    }
 
-        transform: translate(-740px, -205px)rotate(-40deg);
+    60% {
+        transform: translate(-750px, -220px)rotate(-40deg);
     }
 
     70% {
-
-        transform: translate(-740px, -220px)rotate(-30deg);
-    }
-
-    80% {
-
-        transform: translate(-740px, -220px)rotate(-20deg);
+        transform: translate(-750px, -220px)rotate(-38deg);
     }
 
     90% {
-
-        transform: translate(-740px, -230px)rotate(-30deg);
+        transform: translate(-750px, -220px)rotate(-50deg);
     }
-
-    100% {
-
-        transform: translate(-740px, -220px)rotate(-20deg);
+    100%{
+        transform: translate(-750px, -220px)rotate(-38deg);
     }
-
 }
 
 #Certificate {

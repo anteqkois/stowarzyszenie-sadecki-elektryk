@@ -23,16 +23,15 @@
         letter-spacing: 2px;
         padding: 20px 50px 20px 50px;
         background: rgb(99, 50, 139);
-        background: linear-gradient(200deg, $color-purple 65%, rgba(236, 78, 50, 1) 150%);
-        background-size: 200% 200%;
-        background-position: -100px 100px;
+        background-image: linear-gradient(to left, rgba(236, 78, 50, 1) -60%, $color-purple 80%);
+        background-size: 200% ;
         transition: all 0.25s ease-in-out,
         background-position 0.5s ease-in-out;
         overflow: hidden;
     }
 
     &__link:hover {
-        background-position: 0px 70px;
+        background-position: right;
         transition: background-position 0.5s ease-in-out;
     }
 
