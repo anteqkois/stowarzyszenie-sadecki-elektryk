@@ -54,3 +54,9 @@ body{
         clip-path: polygon(0 0, 100% 0, 100% 70%, 0 85%);
     }
 }
+
+@media (min-width: 1700px) {
+    .hero-image {
+        clip-path: polygon(0 0, 100% 0, 100% 65%, 0 80%);
+    }
+}

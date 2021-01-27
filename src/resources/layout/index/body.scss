@@ -72,6 +72,8 @@ body {
     width: 400%;
     height: 100%;
     transform: translateX(-46%);
+    padding: 0px 0px 20px 0px;
+    filter: drop-shadow(5px 15px 5px rgba(0, 0, 0, 0.05)) drop-shadow(8px 10px 5px rgba(0, 0, 0, 0.1)) drop-shadow(-5px 10px 5px rgba(0, 0, 0, 0.05));
 
     &__wrapper {
         width: 100vw;
@@ -85,7 +87,6 @@ body {
 
     //display: none;
 }
-
 .main {
     //position: absolute;
     //top: 60px;
@@ -102,6 +103,11 @@ body {
 @media (min-width: 768px) {
 
     .nav {
+        &__background {
+            display: none;
+
+        }
+
         &__cointainer {
             padding: 0px 15px 0px 0px;
         }
@@ -119,10 +125,11 @@ body {
 @media (min-width: 992px) {
     .background {
         width: 250%;
-            &__wrapper {
-                height: 67%;
-                top: 200px;
-            }
+
+        &__wrapper {
+            height: 67%;
+            top: 200px;
+        }
     }
 }
 
@@ -131,12 +138,11 @@ body {
     .background {
         width: 100%;
         transform: translateX(0%);
+
         &__wrapper {
             height: 63%;
-            top: 200px;
         }
     }
-
     .main {
         padding: 10px 0%;
     }

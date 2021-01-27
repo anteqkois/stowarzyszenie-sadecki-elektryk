@@ -17,9 +17,10 @@ import './components/aid/aid.js';
 import './components/footer/footer.scss';
 import './components/footer/footer.js';
 import './components/association/association.scss';
+import './components/association/association.js';
 
 //import image
-import './img/logo.png';
+import './img/logo.svg';
 import './img/pit-op.jpg';
 
 //import svg
@@ -34,7 +35,7 @@ import './img/iconmonstr-nature.svg';
 import './img/iconmonstr-programming.svg';
 
 //import functions and vars
-import {addPositionProject, createProjects, Project} from './components/project/project';
+import {addPositionProject, createProjects, Project, addScrollTriggerProject} from './components/project/project';
 
 
 //Others code to index.html
@@ -46,6 +47,7 @@ const getPosts =  async () =>{
         const allProject = createProjects(data);
         document.querySelector('.projects-wrapper').appendChild(allProject);
         addPositionProject();
+        addScrollTriggerProject();
     } catch (error) {
         console.log('Wystąpił błąd podczas pobrania projektów', error);
     }

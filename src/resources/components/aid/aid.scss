@@ -42,6 +42,9 @@
 
 .aid-illustartion {
     width: 300px;
+                filter: drop-shadow(5px 15px 5px rgba(0, 0, 0, 0.05)) 
+                drop-shadow(8px 10px 5px rgba(0, 0, 0, 0.1)) 
+                drop-shadow(-5px 10px 5px rgba(0, 0, 0, 0.05));
 
     &__wrapper {
         //border: 1px red solid;
@@ -341,11 +344,10 @@
         &__step-descriptions-item {
             min-width: 340px;
         }
-        
+
         &__steps-view {}
-        
-        &__step-icons {
-        }
+
+        &__step-icons {}
 
         &__step-icons-item {
             font-size: 1.4rem;
@@ -395,6 +397,7 @@
         &__title {
             font-size: 3rem;
             white-space: nowrap;
+            text-shadow: 3px 4px 4px grey;
         }
 
         &__text {
@@ -462,11 +465,9 @@
                 height: 110%;
                 background: rgb(99, 50, 139);
                 background: linear-gradient(220deg, $color-purple 50%, rgba(236, 78, 50, 1) 150%);
+                        background-image: linear-gradient(220deg, rgba(236, 78, 50, 1) -80%, $color-purple 70%);
                 border-radius: 5px;
-                box-shadow: 0 25px 35px rgba(10px, 10px, 0px, 0.6);
-                border-right: 1px solid rgba(255, 255, 255, 0.2);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
+                box-shadow: 5px 15px 20px rgba(10px, 10px, 0px, 0.7);
                 z-index: -10;
             }
         }
@@ -638,10 +639,12 @@
         &__wrapper {
             margin: 30px 0px 0px 30px;
         }
+
+        &__title {
+            font-size: 4em;
+        }
     }
 }
-
-
 
 @keyframes showActiveIcon {
     from {

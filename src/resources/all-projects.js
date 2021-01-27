@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import './img/test.jpg'
 
-import {addPositionProject, createProjects, Project} from './components/project/project';
+import {addPositionProject, createProjects, Project, addScrollTriggerProject} from './components/project/project';
 
 
 
@@ -50,22 +50,11 @@ gsap.fromTo(title, {y: 0, opacity: 1}, {y: '-=100', opacity: 0, scrollTrigger: {
     scrub: 2,
 }});
 
-const addScrollTriggerProject = ()=>{
-    const projects = document.querySelectorAll('.project');
 
-    projects.forEach(project =>{
-        gsap.fromTo(project, {y: '+=100', opacity: 0},{y: 0, opacity: 1, duration: 2, scrollTrigger: {
-            trigger: project,
-            start: '-20% 85%',
-            markers: true,
-        }})
-    })
-
-}
 
 const heroImage = document.querySelector('.hero-image');
 
-gsap.fromTo(heroImage, {opacity: 1, filter: 'grayscale(0%)'}, {opacity: 1, filter: 'grayscale(100%)',scrollTrigger: {
+gsap.fromTo(heroImage, {opacity: 1, filter: 'grayscale(0%)'}, {opacity: 1, filter: 'grayscale(60%)',scrollTrigger: {
     trigger: '.projects-wrapper',
     start: 'top 80%',
     end: 'top top',

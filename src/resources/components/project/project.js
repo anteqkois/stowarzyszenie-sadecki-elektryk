@@ -107,14 +107,25 @@ const createProjects = (data) => {
 }
 
 // GSAP
-
 const illustration = document.querySelector('.projects-wrapper__illustartion');
 
 gsap.fromTo(illustration, {y: '-=150', x: '-=400', opacity:0},{y: 0, x: 0, opacity:1, scrollTrigger: {
-        trigger: '.main',
+        trigger: '.projects-wrapper__illustartion',
         start: 'top 60%',
         end: 'top 20%',
         scrub: 2,
     }})
 
-export {addPositionProject, Project, createProjects};
+
+const addScrollTriggerProject = ()=>{
+    const projects = document.querySelectorAll('.project');
+
+    projects.forEach(project =>{
+        gsap.fromTo(project, {y: '+=100', opacity: 0},{y: 0, opacity: 1, duration: 2, scrollTrigger: {
+            trigger: project,
+            start: '-20% 85%',
+        }})
+    })
+
+}
+export {addPositionProject, Project, createProjects, addScrollTriggerProject};
