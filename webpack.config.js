@@ -9,9 +9,9 @@ module.exports = {
     //  minimize: true,
     //},
     
-    //mode: 'development',
+    mode: 'development',
     //devtool: 'source-map',
-    target: 'node',
+    target: ['web', 'es7'],
     entry: {
         index: './src/resources/index.js',
         'all-projects': './src/resources/all-projects.js'
@@ -38,7 +38,7 @@ module.exports = {
             use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
         },
         {
-            test: /\.(png|jpe?g|gif|svg)$/i,
+            test: /\.(png|jpe?g|gif|svg|ico)$/i,
             loader: 'file-loader',
             options: {
                 outputPath: 'img',

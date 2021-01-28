@@ -7,7 +7,7 @@ router.get('/', pagesController.index);
 
 router.get('/all-projects', pagesController.projects);
 
-router.get('/admin', pagesController.admin);
+//router.get('/admin', pagesController.admin);
 
 router.get('/projects/:slug', projectsController.findOne);
 

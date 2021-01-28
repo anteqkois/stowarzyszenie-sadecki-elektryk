@@ -21,6 +21,7 @@ import './components/association/association.js';
 
 //import image
 import './img/logo.svg';
+import './img/logo.ico';
 import './img/pit-op.jpg';
 
 //import svg
