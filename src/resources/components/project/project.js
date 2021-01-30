@@ -42,8 +42,7 @@ class Project {
         const projectImageWrapper = document.createElement('div');
         projectImageWrapper.classList.add('project__imgage-wrapper');
         const projectImage = document.createElement('img');
-        const src = `./img/iconmonstr-${ dataOfProject.category }.svg`;
-        projectImage.setAttribute('src', src);
+        projectImage.setAttribute('id', dataOfProject.category);
         projectImage.setAttribute('loading', 'lazy');
         projectImage.setAttribute('alt', 'image representation of project category');
         projectImage.classList.add('project__image');
@@ -102,7 +101,6 @@ class Project {
 const searchNameCategory = async (id) =>{
     try {
         const  {data}  = await axios.get(`/categories/${id}`);
-        //console.log(data.category);
         return data.category;
     } catch (error) {
         console.log('Wystąpił błąd podczas wyszukiwania kategorii', error);
@@ -111,8 +109,14 @@ const searchNameCategory = async (id) =>{
 
 const addImages = ()=>{
     const allProjectImage = document.querySelectorAll('.project__image');
-    allProjectImage.forEach( (element) =>{
-        console.log(element.getAttribute('src'));
+    allProjectImage.forEach( async (element) =>{
+        const categoryName = await searchNameCategory(element.getAttribute('id'))
+            .then( result => { 
+                return result;
+            });
+        
+        const src = `./img/iconmonstr-${ categoryName }.svg`;
+        element.setAttribute('src', src);
     })
 }
 

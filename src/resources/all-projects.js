@@ -9,18 +9,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger); 
 
-
 import './img/test.jpg'
 
-import {addPositionProject, createProjects, Project, addScrollTriggerProject} from './components/project/project';
-
-
-
-
-
-
-
-
+import {addPositionProject, createProjects, addImages, addScrollTriggerProject} from './components/project/project';
 
 //code
 
@@ -31,6 +22,7 @@ const getAllPosts =  async () =>{
         document.querySelector('.projects-wrapper').appendChild(allProject);
         addPositionProject();
         addScrollTriggerProject();
+        addImages();
     } catch (error) {
         console.log('Wystąpił błąd podczas pobrania projektów', error);
     }

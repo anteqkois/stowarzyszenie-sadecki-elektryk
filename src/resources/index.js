@@ -33,7 +33,7 @@ import './img/iconmonstr-mechanics.svg';
 import './img/iconmonstr-culture.svg';
 import './img/iconmonstr-learn.svg';
 import './img/iconmonstr-nature.svg';
-import './img/iconmonstr-programming.svg';
+import './img/iconmonstr-programing.svg';
 
 //import functions and vars
 import {addPositionProject, createProjects, addImages, addScrollTriggerProject} from './components/project/project';
