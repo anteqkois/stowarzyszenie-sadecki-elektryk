@@ -17,7 +17,6 @@ exports.findAll = async (req, res) => {
 
     try{
         const posts = await Post.find({
-
         }).limit(limit).sort({date: 'desc'});
         return res.status(200).send(posts);
     } catch (error){
@@ -39,8 +38,6 @@ exports.create = async (req, res) => {
         console.log(error);
     }
 };
-
-
 
 /*
 const createPost = async (data) =>{

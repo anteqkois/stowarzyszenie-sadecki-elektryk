@@ -3,6 +3,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger); 
 
+const axios = require('axios');
+
 const addPositionProject = () =>{
     
     const project = document.querySelectorAll('.project__wrapper');
@@ -97,9 +99,33 @@ class Project {
     }
 };
 
+const searchNameCategory = async (id) =>{
+    try {
+        const  {data}  = await axios.get(`/categories/${id}`);
+        //console.log(data.category);
+        return data.category;
+    } catch (error) {
+        console.log('Wystąpił błąd podczas wyszukiwania kategorii', error);
+    }
+};
+
+const addImages = ()=>{
+    const allProjectImage = document.querySelectorAll('.project__image');
+    allProjectImage.forEach( (element) =>{
+        console.log(element.getAttribute('src'));
+    })
+}
+
+
+/* const categoryName = await searchNameCategory(element.category)
+.then( result => { 
+    console.log(result);
+    return result;
+}); */
+
 const createProjects = (data) => {
     const fragment = document.createDocumentFragment();
-    data.forEach(element => {
+    data.forEach( async (element) => {
         const project = new Project(element);
         fragment.appendChild(project);
     })
@@ -128,4 +154,4 @@ const addScrollTriggerProject = ()=>{
     })
 
 }
-export {addPositionProject, Project, createProjects, addScrollTriggerProject};
+export {addPositionProject, addImages, createProjects, addScrollTriggerProject};

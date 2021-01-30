@@ -1,7 +1,7 @@
 require('dotenv').config({ path: '.env'});
 
 const express = require('express');
-const path = require('path');
+const {join} = require('path');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const routes = require('./routes/index');
@@ -14,10 +14,10 @@ const app = express();
 const database = require('./config/database');
 
 app.set('port', process.env.PORT || 8080);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', join(__dirname, 'views'));
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/admin', adminRouter);

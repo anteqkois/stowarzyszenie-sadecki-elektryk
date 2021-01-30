@@ -3,15 +3,28 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
-    //optimization: {
-    //  minimize: true,
-    //},
+    optimization: {
+        //minimize: true,
+        splitChunks: {
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all'
+                }
+            }
+        }
+    },
     
-    mode: 'development',
+    //mode: 'development',
+    mode: 'production',
     //devtool: 'source-map',
     target: ['web', 'es7'],
+    //target: 'node',
     entry: {
         index: './src/resources/index.js',
         'all-projects': './src/resources/all-projects.js'
@@ -73,6 +86,9 @@ module.exports = {
         new  MiniCssExtractPlugin ({
             filename: '[name].css'
         }),
+        new BundleAnalyzerPlugin(),
+        //new CompressionPlugin(),
+        
         //new BrowserSyncPlugin({
         //// browse to http://localhost:3000/ during development,
         //// ./public directory is being served
@@ -81,21 +97,21 @@ module.exports = {
         //server: { baseDir: ['./src/public'] }
         //}),
         new BrowserSyncPlugin(
-        // BrowserSync options
-        {
-            // browse to http://localhost:3000/ during development
-            host: 'localhost',
-            port: 8081,
-            // proxy the Webpack Dev Server endpoint
-            // (which should be serving on http://localhost:3100/)
-            // through BrowserSync
-            proxy: 'http://localhost:8080'
-        },
-        // plugin options
-        {
-            // prevent BrowserSync from reloading the page
-            // and let Webpack Dev Server take care of this
-            reload: true
+            // BrowserSync options
+            {
+                // browse to http://localhost:3000/ during development
+                host: 'localhost',
+                port: 8081,
+                // proxy the Webpack Dev Server endpoint
+                // (which should be serving on http://localhost:3100/)
+                // through BrowserSync
+                proxy: 'http://localhost:8080'
+            },
+            // plugin options
+            {
+                // prevent BrowserSync from reloading the page
+                // and let Webpack Dev Server take care of this
+                reload: true
         })
     ]   
 };

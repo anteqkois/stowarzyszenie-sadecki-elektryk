@@ -4,11 +4,28 @@ const mongoose = require('mongoose');
 const dbname = process.env.DB_NAME;
 const url = `mongodb://localhost:27017/${dbname}`;
 
-const database = mongoose.connect(url, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true
-})
+
+try {
+    const database = mongoose.connect(url, {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true
+    })
+    console.log(`Server connect with database`);
+    return database;
+} catch (error) {
+    console.log(`Server can't connect with database, error message: ${error}`);
+}
+
+
+// first simple connection
+/* const database = mongoose.connect(url, {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true
+    })
+ */
+    
 
 module.exports = database;
 

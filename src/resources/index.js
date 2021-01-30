@@ -36,7 +36,7 @@ import './img/iconmonstr-nature.svg';
 import './img/iconmonstr-programming.svg';
 
 //import functions and vars
-import {addPositionProject, createProjects, Project, addScrollTriggerProject} from './components/project/project';
+import {addPositionProject, createProjects, addImages, addScrollTriggerProject} from './components/project/project';
 
 
 //Others code to index.html
@@ -45,10 +45,12 @@ const axios = require('axios');
 const getPosts =  async () =>{
     try {
         const { data } = await  axios.get('/projects?limit=4');
-        const allProject = createProjects(data);
+        const allProject =  createProjects(data);
+    
         document.querySelector('.projects-wrapper').appendChild(allProject);
         addPositionProject();
         addScrollTriggerProject();
+        addImages();
     } catch (error) {
         console.log('Wystąpił błąd podczas pobrania projektów', error);
     }
