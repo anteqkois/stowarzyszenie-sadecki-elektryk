@@ -36,7 +36,7 @@ import './img/iconmonstr-nature.svg';
 import './img/iconmonstr-programing.svg';
 
 //import functions and vars
-import {addPositionProject, createProjects, addImages, addScrollTriggerProject} from './components/project/project';
+import {addPositionProject, createProjects, addScrollTriggerProject} from './components/project/project';
 
 
 //Others code to index.html
@@ -50,14 +50,10 @@ const getPosts =  async () =>{
         document.querySelector('.projects-wrapper').appendChild(allProject);
         addPositionProject();
         addScrollTriggerProject();
-        addImages();
+        //addImages();
     } catch (error) {
         console.log('Wystąpił błąd podczas pobrania projektów', error);
     }
 
 };
 document.onload = getPosts()
-
-let currentYear = new Date().getFullYear();
-let copyright = `&copy; Copyright ${currentYear}, Antek Kois & Nikodem Kusiak. All rights reserved`;
-document.querySelector('.copyright').innerHTML = copyright;

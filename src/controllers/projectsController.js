@@ -1,7 +1,7 @@
 const database = require('../config/database');
-const Post = require('../models/project');
+const Project = require('../models/project');
 
-exports.findOne = async (req, res) => {
+/* exports.findOne = async (req, res) => {
     try{
         const post = await Post.findOne({
             slug: req.params.slug
@@ -10,9 +10,33 @@ exports.findOne = async (req, res) => {
     } catch (error){
         console.log(error);
     }
+}; */
+
+exports.findOne = async (req, res, next) => {
+    try{
+        const project = await Project.findOne({
+            slug: req.params.slug
+        });
+        req.data = project;
+        next();
+    } catch (error){
+        console.log(error);
+    }
 };
 
-exports.findAll = async (req, res) => {
+exports.findAll = async (req, res, next) => {
+    let limit = parseInt(req.query.limit);
+
+    try{
+        const projects = await Project.find({
+        }).limit(limit).sort({date: 'desc'});
+        req.data = projects;
+        next();
+    } catch (error){
+        console.log(error);
+    }
+};
+/* exports.findAll = async (req, res) => {
     let limit = parseInt(req.query.limit);
 
     try{
@@ -22,18 +46,18 @@ exports.findAll = async (req, res) => {
     } catch (error){
         console.log(error);
     }
-};
+}; */
 
 exports.create = async (req, res) => {
     try{
-        const post = new Post({
+        const project = new Project({
             title: req.params.title,
             date: req.params.date,
             description: req.params.description
         });
-        await post.save();
+        await project.save();
 
-        return res.status(201).send({post, message: 'Post has just been created'});
+        return res.status(201).send({post: project, message: 'Project has just been created'});
     } catch (error){
         console.log(error);
     }

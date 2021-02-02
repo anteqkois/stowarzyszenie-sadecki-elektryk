@@ -305,14 +305,15 @@
 @media (min-width: 1600px) {
 
     .projects-wrapper {
+        margin: 70px 150px 20px 150px;
         &__illustartion {
-            margin-top: 90px;
+            margin-top: 140px;
             max-width: 550px;
         }
 
         &__title {
             font-size: 4em;
-            top: 80px;
+            top: 70px;
             right: 100px;
         }
     }

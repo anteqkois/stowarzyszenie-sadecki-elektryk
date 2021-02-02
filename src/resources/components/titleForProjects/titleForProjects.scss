@@ -1,6 +1,6 @@
 @import '../../setting/varAndMixin.scss';
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
 
     .title {
         @include flexCenter;
@@ -12,7 +12,8 @@
         width: auto;
         height: 20%;
         font-weight: 500;
-        visibility: hidden;
+        z-index: 10;
+        cursor: pointer;
 
         &::before {
             content: '';
@@ -35,15 +36,12 @@
             bottom: 30%;
             background-color: black;
         }
-        &--active{
-            visibility: visible;
-        }
 
     }
 }
 
 @media (min-width: 1700px) {
-    .title{
+    .title {
         top: 40vw;
     }
 }

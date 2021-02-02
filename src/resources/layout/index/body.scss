@@ -4,12 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    //font-family: 'Teko',
-    //    sans-serif;
     font-family: 'Ubuntu',
         sans-serif;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
 }
 
 body {
@@ -36,35 +36,35 @@ body {
         border-radius: 6px;
     }
 
-    .nav {
-        width: 100vw;
-        height: auto;
-        position: fixed;
-        top: 0;
-        z-index: 10;
+}
+.nav {
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    top: 0;
+    z-index: 10;
 
-        &__cointainer {
-            width: 100%;
-            height: 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    &__cointainer {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__background {
+        @include backgroundIce;
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        box-shadow: $color-grey 0px 0px 10px;
+        transition: box-shadow 2.75s ease-in-out 0s;
+
+        &--active {
+            box-shadow: $color-grey 0px 0px 0px;
+            transition: box-shadow 0.75s ease-in-out 0s;
         }
 
-        &__background {
-            @include backgroundIce;
-            position: absolute;
-            width: 100%;
-            height: 60px;
-            box-shadow: $color-grey 0px 0px 10px;
-            transition: box-shadow 2.75s ease-in-out 0s;
-
-            &--active {
-                box-shadow: $color-grey 0px 0px 0px;
-                transition: box-shadow 0.75s ease-in-out 0s;
-            }
-
-        }
     }
 }
 
@@ -110,6 +110,7 @@ body {
 
         &__cointainer {
             padding: 0px 15px 0px 0px;
+            height: 70px;
         }
     }
 

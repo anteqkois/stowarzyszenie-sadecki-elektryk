@@ -1,3 +1,8 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger); 
+
 const fabricDescriptionItems = (numberOfActiveSteps, widthDisplay) => {
     instruction.instructionTextList.innerHTML = '';
     const fabricToSmall = (number) => {
@@ -57,10 +62,6 @@ const changeActive = (e) =>{
 
     instruction.setInstructionText();
 }
-
-
-
-
 
 let instruction = {
     instructionIcons : Array.from(document.querySelectorAll('.aid-instruction__step-icons-item')),
@@ -150,4 +151,27 @@ mediaQuery.addListener(handleTabletChange)
 // Initial check
 handleTabletChange(mediaQuery)
 
-//console.log(instruction.instructionStepActive);
+const description = document.querySelector('.aid-description__wrapper');
+const illustration =  document.querySelector('.aid-illustartion__wrapper');
+const text =  document.querySelector('.aid-instruction__text');
+const img =  document.querySelector('.aid-instruction__steps-view');
+const listIcon =  document.querySelector('.aid-instruction__step-icons');
+
+gsap.fromTo([description, illustration], {opacity: 0, y: '+=100px'}, {opacity: 1, y: 0, duration: 2, scrollTrigger: {
+    trigger: '.aid-wrapper',
+    start: 'top 75%',
+}})
+
+const tl = gsap.timeline({scrollTrigger: {
+    trigger: '.aid-instruction__text',
+    start: 'top 80%',
+    markers: true,
+}});
+
+
+tl.set(text, {x: '-=400'});
+tl.set(img, {x: '+=100'});
+
+tl.to(text, {x: 0, opacity: 1, duration: 1})
+    .to(img, {x: 0, opacity: 1, duration: 1})
+    .to(listIcon, { opacity: 1, duration: 1})

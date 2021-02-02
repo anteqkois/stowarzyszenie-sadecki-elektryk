@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const dbname = process.env.DB_NAME;
 const url = `mongodb://localhost:27017/${dbname}`;
 
-
 try {
     const database = mongoose.connect(url, {
         useNewUrlParser: true,
@@ -20,12 +19,11 @@ try {
 
 // first simple connection
 /* const database = mongoose.connect(url, {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useUnifiedTopology: true
-    })
- */
-    
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+})
+*/
 
 module.exports = database;
 

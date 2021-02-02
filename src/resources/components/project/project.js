@@ -42,9 +42,13 @@ class Project {
         const projectImageWrapper = document.createElement('div');
         projectImageWrapper.classList.add('project__imgage-wrapper');
         const projectImage = document.createElement('img');
+        const {category: { category }} = dataOfProject
         projectImage.setAttribute('id', dataOfProject.category);
         projectImage.setAttribute('loading', 'lazy');
         projectImage.setAttribute('alt', 'image representation of project category');
+        projectImage.setAttribute('alt', 'image representation of project category');
+        const src = `./img/iconmonstr-${ category }.svg`;
+        projectImage.setAttribute('src', src);
         projectImage.classList.add('project__image');
         projectImageWrapper.appendChild(projectImage);
         project.appendChild(projectImageWrapper);
@@ -84,7 +88,7 @@ class Project {
         span.innerHTML = 'Wszystkie projekty';
         span.classList.add('button__link');
         span.setAttribute('data-text', 'Wszystkie projekty');
-        span.setAttribute('href', 'http://localhost:8081/all-projects');
+        span.setAttribute('href', '/all-projects');
 
         const butttonIcon = document.createElement('div');
         butttonIcon.classList.add('button__icon');
@@ -98,7 +102,7 @@ class Project {
     }
 };
 
-const searchNameCategory = async (id) =>{
+/* const searchNameCategory = async (id) =>{
     try {
         const  {data}  = await axios.get(`/categories/${id}`);
         return data.category;
@@ -121,15 +125,16 @@ const addImages = ()=>{
 }
 
 
-/* const categoryName = await searchNameCategory(element.category)
+const categoryName = await searchNameCategory(element.category)
 .then( result => { 
     console.log(result);
     return result;
 }); */
 
 const createProjects = (data) => {
+
     const fragment = document.createDocumentFragment();
-    data.forEach( async (element) => {
+    data.forEach((element) => {
         const project = new Project(element);
         fragment.appendChild(project);
     })
@@ -158,4 +163,4 @@ const addScrollTriggerProject = ()=>{
     })
 
 }
-export {addPositionProject, addImages, createProjects, addScrollTriggerProject};
+export {addPositionProject, createProjects, addScrollTriggerProject};

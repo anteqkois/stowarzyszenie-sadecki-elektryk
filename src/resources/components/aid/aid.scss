@@ -42,9 +42,7 @@
 
 .aid-illustartion {
     width: 300px;
-                filter: drop-shadow(5px 15px 5px rgba(0, 0, 0, 0.05)) 
-                drop-shadow(8px 10px 5px rgba(0, 0, 0, 0.1)) 
-                drop-shadow(-5px 10px 5px rgba(0, 0, 0, 0.05));
+    filter: drop-shadow(5px 15px 5px rgba(0, 0, 0, 0.05)) drop-shadow(8px 10px 5px rgba(0, 0, 0, 0.1)) drop-shadow(-5px 10px 5px rgba(0, 0, 0, 0.05));
 
     &__wrapper {
         //border: 1px red solid;
@@ -128,6 +126,7 @@
     &__text {
         //border: 1px blue solid;
         max-width: 600px;
+        opacity: 0;
 
     }
 
@@ -153,6 +152,7 @@
 
     &__steps-view {
         //border: 1px blue solid;
+        opacity: 0;
     }
 
     &__step-icons {
@@ -163,6 +163,7 @@
         max-width: 600px;
         padding: 0px 10px;
         margin-bottom: 15px;
+        opacity: 0;
     }
 
     &__step-icons-item {
@@ -465,7 +466,7 @@
                 height: 110%;
                 background: rgb(99, 50, 139);
                 background: linear-gradient(220deg, $color-purple 50%, rgba(236, 78, 50, 1) 150%);
-                        background-image: linear-gradient(220deg, rgba(236, 78, 50, 1) -80%, $color-purple 70%);
+                background-image: linear-gradient(220deg, rgba(236, 78, 50, 1) -80%, $color-purple 70%);
                 border-radius: 5px;
                 box-shadow: 5px 15px 20px rgba(10px, 10px, 0px, 0.7);
                 z-index: -10;
@@ -545,7 +546,7 @@
 @media (min-width: 1200px) {
     .aid-wrapper {
         padding: 10px 50px 100px 50px;
-        margin: 300px 30px 70px 30px;
+        margin: 200px 30px 70px 30px;
         max-height: 1300px
     }
 
@@ -608,8 +609,15 @@
 }
 
 @media (min-width: 1600px) {
+    .aid-wrapper {
+        padding: 10px 50px 130px 50px;
+        margin: 200px 150px 70px 150px;
+        max-height: 1450px
+    }
+
     .aid-illustartion {
         width: 550px;
+        margin-top: 120px;
 
         &__attribution {
             font-size: 0.6rem;

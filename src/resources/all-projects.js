@@ -1,7 +1,9 @@
 import '../views/all-projects.html';
 import './components/hamburgerMenu/hamburgerMenu';
+import './components/footer/footer';
 import './components/heroImage/heroImage.scss'
 import './components/titleForProjects/titleForProjects.scss'
+import './components/titleForProjects/titleForProjects'
 const axios = require('axios');
 
 import gsap from "gsap";
@@ -11,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 import './img/test.jpg'
 
-import {addPositionProject, createProjects, addImages, addScrollTriggerProject} from './components/project/project';
+import {addPositionProject, createProjects, addScrollTriggerProject} from './components/project/project';
 
 //code
 
@@ -22,7 +24,6 @@ const getAllPosts =  async () =>{
         document.querySelector('.projects-wrapper').appendChild(allProject);
         addPositionProject();
         addScrollTriggerProject();
-        addImages();
     } catch (error) {
         console.log('Wystąpił błąd podczas pobrania projektów', error);
     }
@@ -33,22 +34,12 @@ document.onload = getAllPosts();
 
 
 // GSAP
-const title = document.querySelector('.title');
-
-gsap.fromTo(title, {y: 0, opacity: 1}, {y: '-=100', opacity: 0, scrollTrigger: {
-    trigger: '.projects-wrapper',
-    start: 'top 90%',
-    end: 'top 60%',
-    scrub: 2,
-}});
-
-
 
 const heroImage = document.querySelector('.hero-image');
 
 gsap.fromTo(heroImage, {opacity: 1, filter: 'grayscale(0%)'}, {opacity: 1, filter: 'grayscale(60%)',scrollTrigger: {
     trigger: '.projects-wrapper',
-    start: 'top 80%',
+    start: '40px 50%',
     end: 'top top',
     scrub: 2,
 }});

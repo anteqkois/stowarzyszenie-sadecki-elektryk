@@ -8,9 +8,9 @@ router.get('/', pagesController.index);
 
 router.get('/all-projects', pagesController.projects);
 
-router.get('/projects/:slug', projectsController.findOne);
+router.get('/projects/:slug', projectsController.findOne, categoriesController.searchName);
 
-router.get('/projects', projectsController.findAll);
+router.get('/projects', projectsController.findAll, categoriesController.searchNameAll);
 
 router.get('/categories', categoriesController.findAll);
 
