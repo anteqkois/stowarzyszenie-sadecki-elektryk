@@ -11,7 +11,7 @@ const addPositionProject = () =>{
     
     for (let element = 0; element < project.length; element++) {
         const child = project[element];
-        element%2===0 ? child.classList.add('project__wrapper-left'): child.classList.add('project__wrapper-right')
+        element%2===0 ? child.classList.add('project__wrapper-right'): child.classList.add('project__wrapper-left')
     }
     
 }
@@ -147,7 +147,7 @@ const illustration = document.querySelector('.projects-wrapper__illustartion');
 gsap.fromTo(illustration, {y: '-=150', x: '-=400', opacity:0},{y: 0, x: 0, opacity:1, scrollTrigger: {
         trigger: '.projects-wrapper__illustartion',
         start: 'top 60%',
-        end: 'top 20%',
+        end: 'top 50%',
         scrub: 2,
     }})
 

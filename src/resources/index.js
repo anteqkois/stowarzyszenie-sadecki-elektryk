@@ -21,11 +21,10 @@ import './components/association/association.js';
 
 //import image
 import './img/logo.svg';
-import './img/logo.ico';
+import './img/favicon.ico';
 import './img/pit-op.jpg';
 
 //import svg
-import './img/iconmonstr-tablet-5.svg';
 import './img/iconmonstr-email-2.svg';
 import './img/iconmonstr-facebook-6.svg';
 import './img/iconmonstr-facebook-messenger-1.svg';
@@ -34,6 +33,7 @@ import './img/iconmonstr-culture.svg';
 import './img/iconmonstr-learn.svg';
 import './img/iconmonstr-nature.svg';
 import './img/iconmonstr-programing.svg';
+import './img/iconmonstr-code-13.svg';
 
 //import functions and vars
 import {addPositionProject, createProjects, addScrollTriggerProject} from './components/project/project';

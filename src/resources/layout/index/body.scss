@@ -128,7 +128,7 @@ body {
         width: 250%;
 
         &__wrapper {
-            height: 67%;
+            height: 70%;
             top: 200px;
         }
     }
@@ -139,10 +139,6 @@ body {
     .background {
         width: 100%;
         transform: translateX(0%);
-
-        &__wrapper {
-            height: 63%;
-        }
     }
     .main {
         padding: 10px 0%;
@@ -152,7 +148,7 @@ body {
 @media (min-width: 1600px) {
     .background {
         &__wrapper {
-            height: 60%;
+            height: 70%;
             top: 190px;
         }
     }

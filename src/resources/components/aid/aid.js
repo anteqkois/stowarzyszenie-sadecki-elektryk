@@ -165,7 +165,6 @@ gsap.fromTo([description, illustration], {opacity: 0, y: '+=100px'}, {opacity: 1
 const tl = gsap.timeline({scrollTrigger: {
     trigger: '.aid-instruction__text',
     start: 'top 80%',
-    markers: true,
 }});
 
 

@@ -14,7 +14,7 @@ gsap.fromTo(title, {y: 0, opacity: 1}, {y: '-=100', opacity: 0, scrollTrigger: {
 
 const scrollTo = () =>{
     window.scroll({
-        top: window.innerHeight*0.7,
+        top: window.innerHeight*0.9,
         left: 0,
     })
     //document.querySelector('.projects-wrapper').scrollIntoView({ 

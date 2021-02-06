@@ -18,12 +18,12 @@
             sans-serif;
         text-decoration: none;
         color: $color-white;
-        font-size: $text-size-normal;
+        font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 2px;
-        padding: 20px 50px 20px 50px;
+        padding: 20px 55px 20px 55px;
         background: rgb(99, 50, 139);
-        background-image: linear-gradient(to left, rgba(236, 78, 50, 1) -60%, $color-purple 80%);
+        background-image: linear-gradient(to left, rgba(236, 78, 50, 1) -20%, $color-purple 70%);
         background-size: 200% ;
         transition: all 0.25s ease-in-out,
         background-position 0.5s ease-in-out;

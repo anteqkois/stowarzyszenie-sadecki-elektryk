@@ -21,7 +21,8 @@ $text-size-attribution: 0.3rem;
 
 @mixin backgroundIce {
     background: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 // small devices (smartphons on landscape oreintation, 768px and up)

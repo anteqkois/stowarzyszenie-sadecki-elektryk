@@ -11,7 +11,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger); 
 
-import './img/test.jpg'
+import './img/hero-image.jpg'
 
 import {addPositionProject, createProjects, addScrollTriggerProject} from './components/project/project';
 
