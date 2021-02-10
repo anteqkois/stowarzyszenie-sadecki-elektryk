@@ -10,7 +10,7 @@
     "built-dev": "webpack --watch --config webpack.dev.js",
     "built-prod": "webpack --watch --config webpack.prod.js",
     "node": "nodemon ./src/server.js",
-    "node:dev": "parallelshell \"npm run node\" \"npm run dev\""
+    "start": "node ./src/server.js"
   },
   "author": "Antek Kois",
   "license": "ISC",
