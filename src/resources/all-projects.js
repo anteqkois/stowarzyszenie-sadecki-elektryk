@@ -1,9 +1,23 @@
 import '../views/all-projects.html';
-import './components/hamburgerMenu/hamburgerMenu';
-import './components/footer/footer';
+
+import './layout/body.scss'
+import './layout/illustrations.scss'
+import './layout/animationSvg/student.scss'
+
+import './components/menu/menu.scss';
+import './components/menu/menu.js';
+import './components/hamburgerMenu/hamburgerMenu.scss';
+import './components/hamburgerMenu/hamburgerMenu.js';
+import './components/button/button.scss';
+import './components/button/button.js';
+import './components/project/project.scss';
+import './components/project/project.js';
+import './components/footer/footer.scss';
+import './components/footer/footer.js';
 import './components/heroImage/heroImage.scss'
 import './components/titleForProjects/titleForProjects.scss'
 import './components/titleForProjects/titleForProjects'
+
 const axios = require('axios');
 
 import gsap from "gsap";
@@ -44,98 +58,16 @@ gsap.fromTo(heroImage, {opacity: 1, filter: 'grayscale(0%)'}, {opacity: 1, filte
     scrub: 2,
 }});
 
-
-
-
-/*
-const title ={
-    title: document.querySelector('.title'),
-    isActive: true,
-    toggleTitle: function(){
-        //console.log(this)
-        this.title.classList.toggle('title--active');
-        this.isActive = !this.isActive;
-    },
-    addActive: function(){
-        !this.isActive && this.toggleTitle();
-    },
-    removeActive: function(){
-        this.isActive && this.toggleTitle();
-    },
-    titleObserver: function(){
-        window.scrollY > 100 ? this.addActive() : this.removeActive();
-    }
+const changeForFirefox = ()=>{
+    const elements = [document.querySelector('.menu'),
+        (document.querySelector('.projects-wrapper')),
+        (document.querySelector('.aid-wrapper')),
+    ];
+    elements.forEach(element => {
+        element.classList.contains('menu') ? element.style.background = 'rgba(237, 241, 244, 0.95)': element.style.background = 'rgba(237, 241, 244, 0.15)';
+    })
 }
 
-window.addEventListener('scroll', function(){
-    title.titleObserver();
-});
+let firefoxAgent = window.navigator.userAgent.indexOf("Firefox") > -1;
 
-
-
-
-
-const title = document.querySelector('.title');
-const heightWindow = window.innerHeight;
-
-const scroll = window.scrollY;
-const isActive = true;
-
-const toggleTitle = () =>{
-    title.classList.toggle('title--active');
-    isActive = !isActive;
-}
-
-
-const addActive = ()=>{
-    !isActive ?  toggleTitle() : '';
-}
-const removeActive = ()=>{
-    isActive ?  toggleTitle() : '';
-}
-
-const titleObserver = ()=>{
-    window.scrollY > 100 ? addActive() : removeActive();
-}
-
-window.addEventListener('scroll', titleObserver)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const main = document.querySelector('.main');
-
-const arrow = {
-    arrow: document.querySelector('.arrows__wrapper'),
-    isActive: true,
-    checkOffSet: function() {
-        //console.log(main.getBoundingClientRect().top)
-        main.getBoundingClientRect().top > 500 ? this.setActive() : this.unsetActive();
-    },
-    setActive: function(){
-        !this.isActive && this.toggleActive(); 
-    },
-    unsetActive: function(){
-        this.isActive && this.toggleActive(); 
-    },
-    toggleActive: function(){
-        this.isActive = !this.isActive;
-        this.arrow.classList.toggle('arrows__wrapper--active');
-    }
-}
-
-window.addEventListener('scroll', ()=>{
-    arrow.checkOffSet();
-})*/
+firefoxAgent && changeForFirefox()

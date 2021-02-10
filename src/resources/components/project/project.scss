@@ -6,10 +6,9 @@
     margin: 160px 0px 20px 0px;
     padding-bottom: 30px;
     border-radius: 10px;
-    //box-shadow: 7px 15px 20px -6px black,
-    //    0px 0px 5px rgba(145, 144, 144, 0.493);
     box-shadow: 0 25px 35px rgba(0, 0, 0, 0.5),
         0px 15px 35px rgba(0, 0, 0, 0.5);
+    position: relative;
 
 
     &__title {
@@ -40,8 +39,9 @@
     &__illustartion {
         width: 70%;
         margin-top: 50px;
-            filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.1)) drop-shadow(8px 20px 5px rgba(0, 0, 0, 0.1)) drop-shadow(-5px 20px 5px rgba(0, 0, 0, 0.05));
-        &__wrapper{
+        filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.1)) drop-shadow(8px 20px 5px rgba(0, 0, 0, 0.1)) drop-shadow(-5px 20px 5px rgba(0, 0, 0, 0.05));
+
+        &__wrapper {
             @include flexCenter;
         }
     }
@@ -57,7 +57,6 @@
     border-radius: 5px;
     box-shadow: 6px 15px 30px -6px black;
     position: relative;
-    //overflow: hidden;
 
     &__imgage-wrapper {
         position: absolute;
@@ -93,8 +92,6 @@
         font-weight: 600;
         box-shadow: 2px 5px 10px -6px black,
             0px -3px 5px -6px black;
-        //border-right: 1px solid rgba(255, 255, 255, 0.2);
-        //border-top: 1px solid rgba(255, 255, 255, 0.2);
         position: relative;
         z-index: 10;
 
@@ -148,22 +145,10 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-    .projects-wrapper {
-        //transform-style: preserve-3d;
-        //perspective: 300px;
-    }
 
     .project {
         width: 60%;
         padding: 10px 20px;
-        //transform: translateZ(0px);
-        //transition: transform 0.5s ease-in-out;
-//
-        //&:hover {
-        //    transform: translateZ(5px);
-        //    transition: transform 0.5s ease-in-out;
-//
-        //}
 
         &__title {
             width: calc(100% + 50px);
@@ -175,6 +160,10 @@
                 border-top: 20px solid rgba(237, 241, 244, 0.15);
                 border-left: 20px solid transparent;
             }
+        }
+
+        &__description {
+            line-height: 1.4rem;
         }
 
         &__button__wrpapper {
@@ -213,37 +202,11 @@
             right: 30px;
             transform: translateX(0%);
             text-shadow: 3px 4px 7px rgba(21, 3, 37, 0.719);
-            
+
             &::after {
                 display: none;
             }
         }
-
-        //    &__title {
-        //        position: absolute;
-        //        left: 50%;
-        //        top: -20px;
-        //        transform: translateX(-50%);
-        //        font-size: $text-size-normal;
-        //        text-transform: uppercase;
-        //        padding: 10px 20px;
-        //        white-space: nowrap;
-        //        font-weight: 500;
-        //
-        //        &::after {
-        //            content: "";
-        //            width: 100%;
-        //            height: 100%;
-        //            position: absolute;
-        //            left: 0;
-        //            top: 0;
-        //            background-color: $color-white;
-        //            z-index: -10;
-        //            box-shadow: 4px 10px 20px -6px black,
-        //                3px 0px 15px -10px black;
-        //        }
-        //    }
-
 
         &__illustartion {
             width: 95%;
@@ -257,26 +220,10 @@
 
         &__wrapper {
             @include flexCenter;
-
             margin: 10% 0 0 0;
-/*             &-left {
-                margin-top: 10%;
-            }
-            
-            &-right {
-                margin-top: 10%;
-            }
-            &-left:nth-of-type(3) {
-                margin-top: -30%;
-                background-color: $color-red;
-            }
-
-            &-right:nth-of-type(2) {
-                margin-top: 20%;
-            } */
-
         }
-        &__wrapper:nth-of-type(2){
+
+        &__wrapper:nth-of-type(2) {
             margin-top: 200px;
         }
 
@@ -292,15 +239,6 @@
 
     .project {
         width: 70%;
-
-        &__wrapper {
-
-
-/*             &-left {
-                margin-top: -20%;
-            } */
-
-        }
     }
 }
 
@@ -308,6 +246,7 @@
 
     .projects-wrapper {
         margin: 70px 150px 20px 150px;
+
         &__illustartion {
             margin-top: 140px;
             margin-left: 100px;
@@ -320,12 +259,4 @@
         }
     }
 
-    .project {
-        &__wrapper {
-/*             &-left {
-                margin-top: -10%;
-            } */
-
-        }
-    }
 }

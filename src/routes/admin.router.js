@@ -11,6 +11,7 @@ const adminBro = new AdminBro({
     rootPath: '/admin',
     branding: {
         logo: false,
+        favicon:'/img/favicon.ico',
         companyName: 'Stowarzyszenie Sądecki Elektryk',
     },
 })

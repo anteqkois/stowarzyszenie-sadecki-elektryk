@@ -10,7 +10,8 @@ module.exports = {
     target: ['web', 'es7'],
     entry: {
         index: './src/resources/index.js',
-        'all-projects': './src/resources/all-projects.js'
+        'all-projects': './src/resources/all-projects.js',
+        '404': './src/resources/404.js'
     },
     output: {
         path: path.resolve(__dirname, './src/public'),

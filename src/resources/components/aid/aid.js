@@ -71,10 +71,10 @@ let instruction = {
     instructionTextList :  document.querySelector('.aid-instruction__step-descriptions'),
     instructionText : [
         'Uzupełnij PIT-OP swoim danymi osobowymi, rok za który składane jest oświadczenia oraz wypełnij rubrykę z miejscem składania oświadczenia.',
-        'Uzuopełnij numer KRS następujaco: 0000309499.',
-        'W rubryce uzupełniającej, jako cel szczwegółowy wpisz: "Sądecki Elektryk, oraz wyraź zgodę w rubryce 11."', 
+        'Uzupełnij numer KRS następująco: 0000309499.',
+        'W rubryce uzupełniającej, jako cel szczegółowy wpisz: "Sądecki Elektryk, oraz wyraź zgodę w rubryce 11."', 
         'Podpisz swoje oświadczenie',
-        'Koniec! PIT-OP możesz także wypełnić korzystająć z aplikacji e-pity dostępnej na stronie Pallotyńskiej Fundacji Misyjnej<a href="https://salvatti.pl/">Salvatti.pl</a>'
+        'Koniec! PIT-OP możesz także wypełnić korzystając z aplikacji e-pity dostępnej na stronie Pallotyńskiej Fundacji Misyjnej<a href="https://salvatti.pl/1-procent">Salvatti.pl</a>'
         ],
     instructionTextActive : document.querySelector('.aid-instruction__step-descriptions-item--active'),
 
@@ -151,26 +151,30 @@ mediaQuery.addListener(handleTabletChange)
 // Initial check
 handleTabletChange(mediaQuery)
 
-const description = document.querySelector('.aid-description__wrapper');
-const illustration =  document.querySelector('.aid-illustartion__wrapper');
-const text =  document.querySelector('.aid-instruction__text');
-const img =  document.querySelector('.aid-instruction__steps-view');
-const listIcon =  document.querySelector('.aid-instruction__step-icons');
 
-gsap.fromTo([description, illustration], {opacity: 0, y: '+=100px'}, {opacity: 1, y: 0, duration: 2, scrollTrigger: {
-    trigger: '.aid-wrapper',
-    start: 'top 75%',
-}})
+setTimeout(() => {
 
-const tl = gsap.timeline({scrollTrigger: {
-    trigger: '.aid-instruction__text',
-    start: 'top 80%',
-}});
+    const description = document.querySelector('.aid-description__wrapper');
+    const illustration =  document.querySelector('.aid-illustartion__wrapper');
+    const text =  document.querySelector('.aid-instruction__text');
+    const img =  document.querySelector('.aid-instruction__steps-view');
+    const listIcon =  document.querySelector('.aid-instruction__step-icons');
+    
+    gsap.fromTo([description, illustration], {opacity: 0, y: '+=100px'}, {opacity: 1, y: 0, duration: 2, scrollTrigger: {
+        trigger: '.aid-wrapper',
+        start: 'top 70%',
+    }})
 
-
-tl.set(text, {x: '-=400'});
-tl.set(img, {x: '+=100'});
-
-tl.to(text, {x: 0, opacity: 1, duration: 1})
-    .to(img, {x: 0, opacity: 1, duration: 1})
-    .to(listIcon, { opacity: 1, duration: 1})
+    const tl = gsap.timeline({scrollTrigger: {
+        trigger: '.aid-wrapper',
+        start: 'top 25%',
+    }});
+    
+    tl.set(text, {x: '-=400'});
+    tl.set(img, {x: '+=100'});
+    
+    tl.to(text, {x: 0, opacity: 1, duration: 1})
+        .to(img, {x: 0, opacity: 1, duration: 1})
+        .to(listIcon, { opacity: 1, duration: 1})
+    
+}, 1000);

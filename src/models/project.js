@@ -6,9 +6,15 @@ const Project = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
     },
-    title: String,
+    title: {
+        type: String,
+        maxLength: 60,
+    },
     date: Date,
-    description: String
+    description: {
+        type: String,
+        maxLength: 1100,
+    }
 
 })
 

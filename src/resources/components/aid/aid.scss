@@ -11,6 +11,7 @@
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
+    position: relative;
 
     &__title {
         position: absolute;
@@ -159,6 +160,7 @@
         padding: 0px 10px;
         margin-bottom: 15px;
         opacity: 0;
+        user-select: none;
     }
 
     &__step-icons-item {
@@ -253,9 +255,6 @@
 .aid-instruction-image {
     width: 100%;
     max-width: 650px;
-
-    &__wrapper {}
-
 }
 
 .aid-instruction-step {
@@ -327,38 +326,6 @@
 // small devices (smartphons on landscape oreintation, 768px and up)
 @media (max-width: 768px) and (orientation: landscape) {}
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-    .aid-instruction {
-        &__wrapper {}
-
-        &__text {}
-
-        &__step-descriptions {}
-
-        &__step-descriptions-item {
-            min-width: 340px;
-        }
-
-        &__steps-view {}
-
-        &__step-icons {}
-
-        &__step-icons-item {
-            font-size: 1.4rem;
-        }
-    }
-
-    .aid-description {
-        &__wrapper {}
-    }
-
-    .aid-instruction-image {
-        &__wrapper {}
-
-    }
-}
-
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     .aid-wrapper {
@@ -428,7 +395,6 @@
             justify-content: space-around;
             height: 100%;
             padding: 30px 0px;
-            //margin: 20px 25px;
 
         }
 
@@ -523,7 +489,7 @@
     }
 
     .aid-instruction-image {
-        //max-width: none;
+
 
         &__wrapper {
             padding: 30px 0px 70px 0px;
@@ -566,7 +532,6 @@
         }
 
         &__step-icons {
-            //align-items: flex-start;
             width: auto;
             transform: translateX(-50%);
         }
@@ -620,7 +585,6 @@
     }
 
     .aid-instruction-image {
-        //max-width: none;
 
         &__wrapper {
             padding: 30px 0px 70px 0px;

@@ -1,0 +1,47 @@
+@import '../../setting/varAndMixin.scss';
+
+#chatAid {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(1.4);
+}
+
+#lineOne {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: opacity 1.5s 0.4s infinite;
+}
+
+#lineTwo {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: opacity 1.5s 0.2s infinite;
+}
+
+#lineThree {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: opacity 1.5s infinite;
+}
+
+#leftHand {
+    transform-box: fill-box;
+    transform-origin: left bottom;
+    animation: handStudentMovie 1.4s 1s infinite alternate;
+}
+
+#rightHand {
+    transform-box: fill-box;
+    transform-origin: top;
+    animation: handMovie 1.5s -0.5s infinite linear alternate;
+}
+
+@keyframes handMovie {
+    0% {
+        transform: rotate(0deg) translateY(-3px);
+    }
+
+    100% {
+        transform: rotate(-10deg)translateY(-3px);
+    }
+}

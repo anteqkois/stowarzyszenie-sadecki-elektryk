@@ -21,6 +21,9 @@ app.use(express.static(join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/admin', adminRouter);
+app.use('', (req, res)=>{
+    res.status(404).render('404');
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));

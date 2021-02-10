@@ -1,6 +1,8 @@
-import './layout/index/body.scss'
-import './layout/index/illustrations.scss'
-import './layout/index/animationSvg.scss'
+import './layout/body.scss'
+import './layout/illustrations.scss'
+import './layout/animationSvg/teacher.scss'
+import './layout/animationSvg/student.scss'
+import './layout/animationSvg/woman.scss'
 
 import './components/menu/menu.scss';
 import './components/menu/menu.js';
@@ -8,8 +10,6 @@ import './components/hamburgerMenu/hamburgerMenu.scss';
 import './components/hamburgerMenu/hamburgerMenu.js';
 import './components/button/button.scss';
 import './components/button/button.js';
-import './components/darkMode/darkMode.scss';
-import './components/darkMode/darkMode.js';
 import './components/project/project.scss';
 import './components/project/project.js';
 import './components/aid/aid.scss';
@@ -50,10 +50,23 @@ const getPosts =  async () =>{
         document.querySelector('.projects-wrapper').appendChild(allProject);
         addPositionProject();
         addScrollTriggerProject();
-        //addImages();
     } catch (error) {
         console.log('Wystąpił błąd podczas pobrania projektów', error);
     }
 
 };
-document.onload = getPosts()
+document.onload = getPosts();
+
+const changeForFirefox = ()=>{
+    const elements = [document.querySelector('.menu'),
+        (document.querySelector('.projects-wrapper')),
+        (document.querySelector('.aid-wrapper')),
+    ];
+    elements.forEach(element => {
+        element.classList.contains('menu') ? element.style.background = 'rgba(237, 241, 244, 0.95)': element.style.background = 'rgba(237, 241, 244, 0.15)';
+    })
+}
+
+let firefoxAgent = window.navigator.userAgent.indexOf("Firefox") > -1;
+
+firefoxAgent && changeForFirefox()

@@ -1,150 +1,5 @@
 @import '../../setting/varAndMixin.scss';
 
-//first illustration
-#handAndStick {
-    transform-box: fill-box;
-    transform-origin: bottom;
-    animation: handAndStickMovie 2s infinite alternate;
-}
-
-@keyframes handAndStickMovie {
-    0% {
-        transform: rotate(-15deg);
-    }
-
-    100% {
-        transform: rotate(20deg);
-    }
-}
-
-#Chat_icon {
-    transform-box: fill-box;
-    transform-origin: center;
-    transform: scale(2) translate(-20px, -10px);
-}
-
-#firstcircle {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacity 1.5s 0s infinite;
-}
-
-#secondcircle {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacity 1.5s 0.2s infinite;
-}
-
-#thirdcircle {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacity 1.5s 0.4s infinite;
-}
-
-@keyframes opacity {
-    0% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 0;
-    }
-
-    40% {
-        opacity: 1;
-    }
-
-}
-
-
-
-
-#Chat_icon_1_ {
-    transform-box: fill-box;
-    transform-origin: center;
-    transform: scale(1.7) translate(20px, -30px);
-}
-
-#firstline {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacity 1.5s 1s infinite;
-}
-
-#secondline {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacity 1.5s 1.2s infinite;
-}
-
-#thirdline {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacity 1.5s 1.4s infinite;
-}
-
-
-
-
-
-
-#mouthTeacher {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacityMouth 2s infinite;
-}
-
-@keyframes opacityMouth {
-    0% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 0;
-    }
-
-    30% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: 0;
-    }
-
-    90% {
-        opacity: 1;
-    }
-
-}
-
-
-
-
-#g44231 {
-    transform-box: fill-box;
-    transform-origin: left bottom;
-    animation: handStudentMovie 1.4s 1s infinite alternate;
-}
-
-@keyframes handStudentMovie {
-    0% {
-        transform: rotate(-5deg);
-    }
-
-    100% {
-        transform: rotate(20deg);
-    }
-}
-
-//second illustration
 #firstEffect {
     transform-box: fill-box;
     transform-origin: bottom;
@@ -234,7 +89,8 @@
     90% {
         transform: rotate(-3deg);
     }
-    100%{
+
+    100% {
         transform: rotate(2deg);
     }
 }
@@ -273,7 +129,8 @@
     90% {
         transform: translate(-750px, -220px)rotate(-50deg);
     }
-    100%{
+
+    100% {
         transform: translate(-750px, -220px)rotate(-38deg);
     }
 }
@@ -336,53 +193,5 @@
 
     to {
         transform: rotate(-360deg) translateX(350px) rotate(-360deg);
-    }
-}
-
-//illustration three
-
-#chatAid {
-    transform-box: fill-box;
-    transform-origin: center;
-    transform: scale(1.4);
-}
-
-#lineOne {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacity 1.5s 0.4s infinite;
-}
-
-#lineTwo {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacity 1.5s 0.2s infinite;
-}
-
-#lineThree {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: opacity 1.5s infinite;
-}
-
-#leftHand {
-    transform-box: fill-box;
-    transform-origin: left bottom;
-    animation: handStudentMovie 1.4s 1s infinite alternate;
-}
-
-#rightHand {
-    transform-box: fill-box;
-    transform-origin: top;
-    animation: handMovie 1.5s -0.5s infinite linear alternate;
-}
-
-@keyframes handMovie {
-    0% {
-        transform: rotate(0deg) translateY(-3px);
-    }
-
-    100% {
-        transform: rotate(-10deg)translateY(-3px);
     }
 }

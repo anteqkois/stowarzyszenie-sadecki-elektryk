@@ -1,8 +1,12 @@
 //const mongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 
-const dbname = process.env.DB_NAME;
-const url = `mongodb://localhost:27017/${dbname}`;
+const dbName = process.env.DB_NAME;
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASSWORD;
+const dbSetting = process.env.DB_SETTING;
+const urlLocal = `mongodb://localhost:27017/${dbName}`;
+const url = `mongodb+srv://${dbUser}:${dbPassword}@${dbName}.ffjgf.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 try {
     const database = mongoose.connect(url, {
@@ -10,10 +14,10 @@ try {
         useCreateIndex: true,
         useUnifiedTopology: true
     })
-    console.log(`Server connect with database`);
+    console.log(`Server connected with database`);
     return database;
 } catch (error) {
-    console.log(`Server can't connect with database, error message: ${error}`);
+    console.log(`Server can't connected with database, error message: ${error}`);
 }
 
 

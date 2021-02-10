@@ -73,9 +73,6 @@
 
 }
 
-// small devices (smartphons on landscape oreintation, 768px and up)
-@media (max-width: 768px) and (orientation: landscape) {}
-
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     .footer {
@@ -109,8 +106,6 @@
             }
         }
 
-        &__link {}
-
     }
 }
 
@@ -120,10 +115,10 @@
         height: 550px;
 
         &__creator{
-             margin: 120px 0px 0px 100px;
+            margin: 120px 0px 0px 100px;
         }
         &__association{
-             margin: 120px 0px 0px 0px;
+            margin: 120px 0px 0px 0px;
         }
     }
 }

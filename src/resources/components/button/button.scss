@@ -11,6 +11,7 @@
     border-radius: 30px;
     box-shadow: 6px 11px 20px -6px black;
     cursor: pointer;
+    user-select: none;
     outline: transparent;
 
     &__link {
@@ -28,11 +29,11 @@
         transition: all 0.25s ease-in-out,
         background-position 0.5s ease-in-out;
         overflow: hidden;
-    }
 
-    &__link:hover {
-        background-position: right;
-        transition: background-position 0.5s ease-in-out;
+        &:hover, &:focus{
+            background-position: right;
+            transition: background-position 0.5s ease-in-out;
+        }
     }
 
     &__icon {
@@ -115,9 +116,6 @@
 
 }
 
-// small devices (smartphons on landscape oreintation, 768px and up)
-@media (max-width: 768px) and (orientation: landscape) {}
-
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     .button {
@@ -127,9 +125,3 @@
         }
     }
 }
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {}

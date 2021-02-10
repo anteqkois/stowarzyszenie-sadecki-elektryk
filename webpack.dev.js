@@ -17,7 +17,6 @@ module.exports = merge(common, {
     },
     
     mode: 'development',
-    //devtool: 'nosources-source-map',
     module: {
         rules: [
         

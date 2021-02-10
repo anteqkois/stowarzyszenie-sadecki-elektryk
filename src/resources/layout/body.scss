@@ -1,4 +1,4 @@
-@import '../../setting/varAndMixin.scss';
+@import '../setting/varAndMixin.scss';
 
 * {
     margin: 0;
@@ -6,10 +6,8 @@
     box-sizing: border-box;
     font-family: 'Ubuntu',
         sans-serif;
-    user-select: none;
     -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
-    scroll-snap-type: mandatory;
 }
 
 body {
@@ -18,7 +16,6 @@ body {
     height: auto;
     background-color: $color-white;
     overflow-x: hidden;
-    //position: relative;
 
     &::-webkit-scrollbar {
         width: 16px;
@@ -43,12 +40,13 @@ body {
     position: fixed;
     top: 0;
     z-index: 10;
+    user-select: none;
 
     &__cointainer {
         width: 100%;
         height: 60px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
     }
 
@@ -81,19 +79,14 @@ body {
         position: absolute;
         top: 30px;
         z-index: -20;
-        //text-align: center;
         overflow: hidden;
     }
 
-    //display: none;
 }
 .main {
-    //position: absolute;
-    //top: 60px;
     width: 100vw;
     height: auto;
     position: relative;
-    //overflow-x: hidden;
 }
 
 // small devices (smartphons on landscape oreintation, 768px and up)
@@ -109,7 +102,6 @@ body {
         }
 
         &__cointainer {
-            padding: 0px 15px 0px 0px;
             height: 70px;
         }
     }

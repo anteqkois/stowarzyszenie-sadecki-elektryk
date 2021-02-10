@@ -2,6 +2,9 @@
   "name": "stowarzyszenie-sadecki-elektryk",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "14.15.1"
+  },
   "main": "server.js",
   "scripts": {
     "built-dev": "webpack --watch --config webpack.dev.js",
@@ -17,7 +20,6 @@
     "admin-bro": "^3.4.0",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
-    "compression-webpack-plugin": "^7.1.2",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
@@ -43,7 +45,6 @@
     "mini-css-extract-plugin": "^1.3.4",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
-    "parallelshell": "^3.0.1",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.15.0",

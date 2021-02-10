@@ -14,16 +14,15 @@
 
     &__logo {
 
-        &__wrapper-link{
+        &__wrapper-link {
             position: absolute;
             top: 0;
 
         }
+
         width: 50px;
         margin: 10px 20px;
-        filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.1)) 
-        drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.1)) 
-        drop-shadow(-5px 10px 5px rgba(0, 0, 0, 0.05));
+        filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.1)) drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.1)) drop-shadow(-5px 10px 5px rgba(0, 0, 0, 0.05));
     }
 
     &__list {
@@ -38,10 +37,6 @@
         list-style: none;
     }
 
-    &__icon {
-        display: inline-block;
-    }
-
     &__link {
         font-family: 'Roboto',
             sans-serif;
@@ -52,9 +47,12 @@
         text-transform: uppercase;
         list-style: none;
         color: $color-black;
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: $color-white;
         padding: 10px 10px 10px 10px;
 
-        &:hover {
+        &:hover,
+        &:focus {
             box-shadow: inset rgba(163, 163, 160, 0.329) 0px 0px 100px,
                 rgb(139, 139, 139) 0px 0px 10px;
         }
@@ -65,9 +63,6 @@
     }
 }
 
-// small devices (smartphons on landscape oreintation, 768px and up)
-@media (max-width: 768px) and (orientation: landscape) {}
-
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     .menu {
@@ -75,11 +70,16 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        transform: translateY(0);
+        transition: transform 0.5s ease-in-out;
+        transform: translateY(-80px);
+
+        &--active {
+            transform: translateY(0px);
+        }
 
         &__logo {
             height: 60px;
-            margin: 7.5px 20px;
+            margin: 5px 20px;
         }
 
         &__list {
@@ -98,6 +98,7 @@
 
         &__link {
             padding: 15px 15px;
+            -webkit-text-stroke: transparent;            
         }
 
     }
@@ -109,7 +110,7 @@
         padding-right: 30px;
 
         &__logo {
-            margin: 7.5px 10px;
+            margin: 5px 10px;
         }
 
         &__list {
