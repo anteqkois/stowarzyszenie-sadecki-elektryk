@@ -22,7 +22,7 @@ import './components/association/association.js';
 //import image
 import './img/logo.svg';
 import './img/favicon.ico';
-import './img/pit-op.jpg';
+import './img/pit.png';
 
 //import svg
 import './img/iconmonstr-email-2.svg';

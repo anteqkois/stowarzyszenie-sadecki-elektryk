@@ -70,11 +70,11 @@ let instruction = {
     instructionIconsPassed :  Array.from(document.querySelectorAll('.aid-instruction__step-icons-item--passed')),
     instructionTextList :  document.querySelector('.aid-instruction__step-descriptions'),
     instructionText : [
-        'Uzupełnij PIT-OP swoim danymi osobowymi, rok za który składane jest oświadczenia oraz wypełnij rubrykę z miejscem składania oświadczenia.',
+        'Znajdź w oświadczeniu PIT sekcje dotyczącą przekazania 1% podatku na rzecz organizacji pożytku publicznego.',
         'Uzupełnij numer KRS następująco: 0000309499.',
-        'W rubryce uzupełniającej, jako cel szczegółowy wpisz: "Sądecki Elektryk, oraz wyraź zgodę w rubryce 11."', 
-        'Podpisz swoje oświadczenie',
-        'Koniec! PIT-OP możesz także wypełnić korzystając z aplikacji e-pity dostępnej na stronie Pallotyńskiej Fundacji Misyjnej<a href="https://salvatti.pl/1-procent">Salvatti.pl</a>'
+        'W rubryce "informacje uzupełniające", jako cel szczegółowy wpisz: "Sądecki Elektryk"', 
+        'Wyraź zgodę.',
+        'Koniec sekcji związanej z przekazaniem 1% podatku! PIT możesz także wypełnić korzystając z aplikacji e-pity dostępnej na stronie Pallotyńskiej Fundacji Misyjnej<a href="https://salvatti.pl/1-procent">Salvatti.pl</a>'
         ],
     instructionTextActive : document.querySelector('.aid-instruction__step-descriptions-item--active'),
 
